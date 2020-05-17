@@ -1,0 +1,199 @@
+$cyan: #45d3d3;
+$red: #ea5353;
+$blue: #549ef2;
+$yellow: #fcaf4a;
+
+$link-blue: #3e52a3;
+$dark-blue: #4c4e61;
+$grayish-blue: #a3a5ae;
+$light-gray: #fafafa;
+$white: white;
+
+$breakpoint-small: 375px;
+$breakpoint-medium: 900px;
+
+@mixin respond($breakpoint) {
+	@media only screen and (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+/* 
+https://www.frontendmentor.io/solutions/four-card-feature-section-QBikvZzu2/preview
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	scrollbar-width: thin;
+}
+
+body {
+	font-size: 1.5rem;
+	font-family: "Poppins", Arial, sans-serif;
+	line-height: 1.6;
+
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 5rem 1.6rem;
+
+	color: $dark-blue;
+	background-color: $light-gray;
+}
+
+::selection {
+	background-color: rgba($color: $blue, $alpha: 0.5);
+	color: $dark-blue;
+}
+
+header {
+	text-align: center;
+	max-width: 55rem;
+	margin: 0 auto;
+
+	h1 {
+		font-size: 2.4em;
+		font-weight: 600;
+		margin-bottom: 1.6rem;
+		line-height: 1.4;
+
+		@include respond($breakpoint-medium) {
+			font-size: 2em;
+		}
+		@include respond($breakpoint-small) {
+			font-size: 1.5em;
+		}
+
+		span {
+			font-weight: 200;
+		}
+	}
+
+	p {
+		margin: 0 auto;
+	}
+}
+
+p,
+h1 span {
+	color: $grayish-blue;
+}
+
+.section-cards {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 auto;
+
+	max-width: 116rem;
+	width: 100%;
+	padding: 4rem 0;
+
+	@include respond($breakpoint-medium) {
+		flex-direction: column;
+	}
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-width: 33.5rem;
+	min-width: 25rem;
+	flex-wrap: wrap;
+
+	flex: 1;
+	margin: 0 1.4rem;
+
+	@include respond($breakpoint-medium) {
+		flex-direction: row;
+		max-width: 100%;
+	}
+}
+
+.card {
+	width: 100%;
+	margin: 1.2rem;
+	padding: 2.6rem 2.8rem;
+
+	background-color: $white;
+	border-top: 0.5rem solid transparent;
+	border-radius: 0.5rem;
+	box-shadow: 0 0.4rem 1.6rem 0 rgba($color: $blue, $alpha: 0.2);
+
+	@include respond($breakpoint-medium) {
+		max-width: 33.5rem;
+		min-width: 25rem;
+	}
+
+	@include respond($breakpoint-small) {
+		margin-bottom: 1.2rem;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		h2 {
+			line-height: 1.2;
+		}
+
+		p {
+			margin: 1.2rem 0 2.8rem;
+			font-size: 0.9em;
+			line-height: 1.8;
+		}
+	}
+
+	&__icon {
+		width: 5.2rem;
+		align-self: flex-end;
+	}
+}
+
+.teambuilder {
+	border-color: $red;
+	box-shadow: 0 0.3rem 2rem 0 rgba($color: $red, $alpha: 0.15);
+}
+
+.karma {
+	border-color: $yellow;
+	box-shadow: 0 0.3rem 2rem 0 rgba($color: $yellow, $alpha: 0.15);
+}
+
+.supervisor {
+	border-color: $cyan;
+	box-shadow: 0 0.3rem 2rem 0 rgba($color: $cyan, $alpha: 0.15);
+}
+
+.calculator {
+	border-color: $blue;
+	box-shadow: 0 0.3rem 2rem 0 rgba($color: $blue, $alpha: 0.15);
+}
+
+.attribution {
+	text-align: center;
+	font-size: 1.1rem;
+
+	a {
+		&:link,
+		&:visited {
+			color: $link-blue;
+		}
+		&:hover,
+		&:active {
+			color: $blue;
+			text-decoration: none;
+		}
+	}
+}

@@ -1,0 +1,133 @@
+/* 
+https://www.frontendmentor.io/solutions/four-card-feature-section-QBikvZzu2/preview
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scrollbar-width: thin; }
+
+body {
+  font-size: 1.5rem;
+  font-family: "Poppins", Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5rem 1.6rem;
+  color: #4c4e61;
+  background-color: #fafafa; }
+
+::selection {
+  background-color: rgba(84, 158, 242, 0.5);
+  color: #4c4e61; }
+
+header {
+  text-align: center;
+  max-width: 55rem;
+  margin: 0 auto; }
+  header h1 {
+    font-size: 2.4em;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+    line-height: 1.4; }
+    @media only screen and (max-width: 900px) {
+      header h1 {
+        font-size: 2em; } }
+    @media only screen and (max-width: 375px) {
+      header h1 {
+        font-size: 1.5em; } }
+    header h1 span {
+      font-weight: 200; }
+  header p {
+    margin: 0 auto; }
+
+p,
+h1 span {
+  color: #a3a5ae; }
+
+.section-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 116rem;
+  width: 100%;
+  padding: 4rem 0; }
+  @media only screen and (max-width: 900px) {
+    .section-cards {
+      flex-direction: column; } }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 33.5rem;
+  min-width: 25rem;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 0 1.4rem; }
+  @media only screen and (max-width: 900px) {
+    .flex-container {
+      flex-direction: row;
+      max-width: 100%; } }
+
+.card {
+  width: 100%;
+  margin: 1.2rem;
+  padding: 2.6rem 2.8rem;
+  background-color: white;
+  border-top: 0.5rem solid transparent;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.4rem 1.6rem 0 rgba(84, 158, 242, 0.2); }
+  @media only screen and (max-width: 900px) {
+    .card {
+      max-width: 33.5rem;
+      min-width: 25rem; } }
+  @media only screen and (max-width: 375px) {
+    .card {
+      margin-bottom: 1.2rem; } }
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    .card__content h2 {
+      line-height: 1.2; }
+    .card__content p {
+      margin: 1.2rem 0 2.8rem;
+      font-size: 0.9em;
+      line-height: 1.8; }
+  .card__icon {
+    width: 5.2rem;
+    align-self: flex-end; }
+
+.teambuilder {
+  border-color: #ea5353;
+  box-shadow: 0 0.3rem 2rem 0 rgba(234, 83, 83, 0.15); }
+
+.karma {
+  border-color: #fcaf4a;
+  box-shadow: 0 0.3rem 2rem 0 rgba(252, 175, 74, 0.15); }
+
+.supervisor {
+  border-color: #45d3d3;
+  box-shadow: 0 0.3rem 2rem 0 rgba(69, 211, 211, 0.15); }
+
+.calculator {
+  border-color: #549ef2;
+  box-shadow: 0 0.3rem 2rem 0 rgba(84, 158, 242, 0.15); }
+
+.attribution {
+  text-align: center;
+  font-size: 1.1rem; }
+  .attribution a:link, .attribution a:visited {
+    color: #3e52a3; }
+  .attribution a:hover, .attribution a:active {
+    color: #549ef2;
+    text-decoration: none; }
