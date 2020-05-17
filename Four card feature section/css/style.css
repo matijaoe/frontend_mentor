@@ -1,6 +1,6 @@
-/* 
-https://www.frontendmentor.io/solutions/four-card-feature-section-QBikvZzu2/preview
-*/
+/* VARIABLES */
+/* MIXIN */
+/* STYLE */
 * {
   margin: 0;
   padding: 0;
@@ -49,6 +49,7 @@ p,
 h1 span {
   color: #a3a5ae; }
 
+/* section containg 3 flex containers with 4 cards in total */
 .section-cards {
   display: flex;
   justify-content: center;
@@ -62,6 +63,7 @@ h1 span {
     .section-cards {
       flex-direction: column; } }
 
+/* container for each card group */
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -84,7 +86,7 @@ h1 span {
   background-color: white;
   border-top: 0.5rem solid transparent;
   border-radius: 0.5rem;
-  box-shadow: 0 0.4rem 1.6rem 0 rgba(84, 158, 242, 0.2); }
+  transition: all 800ms; }
   @media only screen and (max-width: 900px) {
     .card {
       max-width: 33.5rem;
@@ -107,27 +109,38 @@ h1 span {
     width: 5.2rem;
     align-self: flex-end; }
 
+/* adding custom shadows for each card */
 .teambuilder {
   border-color: #ea5353;
   box-shadow: 0 0.3rem 2rem 0 rgba(234, 83, 83, 0.15); }
+  .teambuilder:hover {
+    box-shadow: 0 0.3rem 4rem 0.6rem rgba(234, 83, 83, 0.2); }
 
 .karma {
   border-color: #fcaf4a;
   box-shadow: 0 0.3rem 2rem 0 rgba(252, 175, 74, 0.15); }
+  .karma:hover {
+    box-shadow: 0 0.3rem 4rem 0.6rem rgba(252, 175, 74, 0.2); }
 
 .supervisor {
   border-color: #45d3d3;
   box-shadow: 0 0.3rem 2rem 0 rgba(69, 211, 211, 0.15); }
+  .supervisor:hover {
+    box-shadow: 0 0.3rem 4rem 0.6rem rgba(69, 211, 211, 0.2); }
 
 .calculator {
   border-color: #549ef2;
   box-shadow: 0 0.3rem 2rem 0 rgba(84, 158, 242, 0.15); }
+  .calculator:hover {
+    box-shadow: 0 0.3rem 4rem 0.6rem rgba(84, 158, 242, 0.2); }
 
 .attribution {
   text-align: center;
   font-size: 1.1rem; }
-  .attribution a:link, .attribution a:visited {
-    color: #3e52a3; }
-  .attribution a:hover, .attribution a:active {
-    color: #549ef2;
-    text-decoration: none; }
+  .attribution a {
+    transition: all 200ms; }
+    .attribution a:link, .attribution a:visited {
+      color: #3e52a3; }
+    .attribution a:hover, .attribution a:active {
+      color: #549ef2;
+      text-decoration: none; }

@@ -1,3 +1,4 @@
+/* VARIABLES */
 $cyan: #45d3d3;
 $red: #ea5353;
 $blue: #549ef2;
@@ -12,16 +13,14 @@ $white: white;
 $breakpoint-small: 375px;
 $breakpoint-medium: 900px;
 
+/* MIXIN */
 @mixin respond($breakpoint) {
 	@media only screen and (max-width: $breakpoint) {
 		@content;
 	}
 }
 
-/* 
-https://www.frontendmentor.io/solutions/four-card-feature-section-QBikvZzu2/preview
-*/
-
+/* STYLE */
 * {
 	margin: 0;
 	padding: 0;
@@ -85,6 +84,7 @@ h1 span {
 	color: $grayish-blue;
 }
 
+/* section containg 3 flex containers with 4 cards in total */
 .section-cards {
 	display: flex;
 	justify-content: center;
@@ -101,6 +101,7 @@ h1 span {
 	}
 }
 
+/* container for each card group */
 .flex-container {
 	display: flex;
 	flex-direction: column;
@@ -127,7 +128,8 @@ h1 span {
 	background-color: $white;
 	border-top: 0.5rem solid transparent;
 	border-radius: 0.5rem;
-	box-shadow: 0 0.4rem 1.6rem 0 rgba($color: $blue, $alpha: 0.2);
+
+	transition: all 800ms;
 
 	@include respond($breakpoint-medium) {
 		max-width: 33.5rem;
@@ -161,24 +163,37 @@ h1 span {
 	}
 }
 
+/* adding custom shadows for each card */
 .teambuilder {
 	border-color: $red;
 	box-shadow: 0 0.3rem 2rem 0 rgba($color: $red, $alpha: 0.15);
+	&:hover {
+		box-shadow: 0 0.3rem 4rem 0.6rem rgba($color: $red, $alpha: 0.2);
+	}
 }
 
 .karma {
 	border-color: $yellow;
 	box-shadow: 0 0.3rem 2rem 0 rgba($color: $yellow, $alpha: 0.15);
+	&:hover {
+		box-shadow: 0 0.3rem 4rem 0.6rem rgba($color: $yellow, $alpha: 0.2);
+	}
 }
 
 .supervisor {
 	border-color: $cyan;
 	box-shadow: 0 0.3rem 2rem 0 rgba($color: $cyan, $alpha: 0.15);
+	&:hover {
+		box-shadow: 0 0.3rem 4rem 0.6rem rgba($color: $cyan, $alpha: 0.2);
+	}
 }
 
 .calculator {
 	border-color: $blue;
 	box-shadow: 0 0.3rem 2rem 0 rgba($color: $blue, $alpha: 0.15);
+	&:hover {
+		box-shadow: 0 0.3rem 4rem 0.6rem rgba($color: $blue, $alpha: 0.2);
+	}
 }
 
 .attribution {
@@ -186,6 +201,8 @@ h1 span {
 	font-size: 1.1rem;
 
 	a {
+		transition: all 200ms;
+
 		&:link,
 		&:visited {
 			color: $link-blue;
