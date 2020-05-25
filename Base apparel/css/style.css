@@ -6,6 +6,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 1000px) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-size: 1.6rem;
@@ -15,8 +18,15 @@ body {
   background-size: cover;
   color: #ce9797; }
 
+::selection {
+  background-color: #ce9797;
+  color: whitesmoke; }
+
+img {
+  user-select: none; }
+
 .heading-primary {
-  font-size: 4.6em;
+  font-size: 4em;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 1.6rem;
@@ -28,51 +38,121 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh; }
+  justify-content: center;
+  min-height: 100vh; }
 
 .header {
   display: flex;
-  max-height: calc(800px + 2 * 0.6rem);
-  max-width: 1800px;
-  width: 90%;
-  border: 0.6rem solid black; }
-  @media (max-heigh: 840px) {
+  justify-content: center;
+  width: 100%;
+  height: 100vh; }
+  @media only screen and (max-width: 700px) {
     .header {
-      border: none; } }
-  .header__picture img {
-    height: 100%; }
-  .header__logo-box {
-    padding: 4rem 0; }
+      flex-direction: column; } }
+  @media only screen and (min-width: 1800px), only screen and (min-height: 800px) and (min-width: 1800px) {
+    .header {
+      border: none;
+      max-width: 1500px;
+      height: 800px;
+      border: 0.5rem solid black; } }
+  .header__picture {
+    max-width: 610px;
+    width: 100%;
+    background: url(../images/hero-desktop.jpg);
+    background-size: cover;
+    margin-left: auto; }
+    @media only screen and (max-width: 700px) {
+      .header__picture {
+        background: url(../images/hero-mobile.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+        margin-bottom: auto;
+        order: -1;
+        margin: 0; } }
   .header__content {
-    padding: 0 25rem 3rem 20rem;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 4rem 0 5rem;
+    margin-left: 15%; }
+    @media only screen and (max-width: 700px) {
+      .header__content {
+        width: 100%;
+        height: 375px;
+        margin: 0;
+        padding: 3em;
+        flex: 1; } }
+  .header__logo-box {
+    margin-bottom: 3em; }
+    @media only screen and (max-width: 700px) {
+      .header__logo-box {
+        order: -1;
+        display: none; } }
   .header__text {
     flex: 1;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center; }
+    @media only screen and (max-width: 700px) {
+      .header__text {
+        width: 100%;
+        text-align: center; } }
   .header__paragraph {
-    margin: 2rem 0 3rem; }
+    margin: 2rem 0 3.5rem; }
+    @media only screen and (max-width: 700px) {
+      .header__paragraph {
+        padding: 0 2em; } }
 
-.form__input {
-  padding: 1.6rem 2.4rem;
-  border-radius: 100rem;
-  font-weight: 400;
-  font-family: inherit;
-  color: #ce9797;
-  border: 0.2rem solid rgba(206, 151, 151, 0.3); }
-
-.form__submit {
-  background-color: #ce9797;
-  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
-  border: none;
-  padding: 0;
-  text-align: center;
-  padding: 1.6rem 3.2em;
-  border-radius: 100rem; }
+.form {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 96%; }
+  .form__item {
+    display: flex; }
+  .form__item:first-child {
+    flex: 1; }
+  .form__input {
+    font-weight: 400;
+    font-family: inherit;
+    letter-spacing: 0.03rem;
+    color: #ce9797;
+    background-color: transparent;
+    border: 0.2rem solid rgba(206, 151, 151, 0.3);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 1em 1.4em;
+    padding-right: 3.8em;
+    border-radius: 100rem; }
+    .form__input:focus {
+      outline: none;
+      border-color: #ce9797; }
+    .form__input::placeholder {
+      color: #ce9797; }
+    .form__input:invalid {
+      box-shadow: none; }
+  .form .check-valid:invalid {
+    background: transparent url(../images/icon-error.svg) no-repeat;
+    background-position: right 7rem center; }
+  .form .check-valid:placeholder-shown {
+    background: none; }
+  .form__submit {
+    text-align: center;
+    background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+    border: none;
+    padding: 1em 2.8em;
+    margin-left: -4em;
+    cursor: pointer;
+    border-radius: 100rem;
+    box-shadow: 0 1rem 2rem 0 rgba(249, 98, 98, 0.2); }
+    .form__submit:hover, .form__submit:focus {
+      background: linear-gradient(135deg, #ee8c8c, #f96262); }
+    .form__submit:focus {
+      outline: none;
+      border-color: #413a3a; }
 
 .attribution {
   font-size: 11px;

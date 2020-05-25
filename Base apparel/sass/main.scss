@@ -9,6 +9,10 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+
+	@media only screen and (max-width: 1000px) {
+		font-size: 50%;
+	}
 }
 
 body {
@@ -20,8 +24,17 @@ body {
 	color: $desaturated-red;
 }
 
+::selection {
+	background-color: $desaturated-red;
+	color: rgb(245, 245, 245);
+}
+
+img {
+	user-select: none;
+}
+
 .heading-primary {
-	font-size: 4.6em;
+	font-size: 4em;
 	text-transform: uppercase;
 	line-height: 1;
 	letter-spacing: 1.6rem;
@@ -36,70 +49,173 @@ body {
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	justify-content: center;
+
+	min-height: 100vh;
 }
 
 .header {
 	display: flex;
+	justify-content: center;
 
-	max-height: calc(800px + 2 * 0.6rem);
-	max-width: 1800px;
-	width: 90%;
-	border: 0.6rem solid black;
+	width: 100%;
+	height: 100vh;
 
-	@media (max-heigh: 840px) {
+	@media only screen and (max-width: 700px) {
+		flex-direction: column;
+	}
+
+	@media only screen and (min-width: 1800px),
+		only screen and (min-height: 800px) and (min-width: 1800px) {
 		border: none;
+		max-width: 1500px;
+		height: 800px;
+		border: 0.5rem solid black;
 	}
 
 	&__picture {
-		img {
-			height: 100%;
+		max-width: 610px;
+		width: 100%;
+		background: url(../images/hero-desktop.jpg);
+		background-size: cover;
+		margin-left: auto;
+
+		@media only screen and (max-width: 700px) {
+			background: url(../images/hero-mobile.jpg);
+			background-size: cover;
+			width: 100%;
+			height: 300px;
+			margin-bottom: auto;
+			order: -1;
+			margin: 0;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding: 4rem 0 5rem;
+		margin-left: 15%;
+
+		@media only screen and (max-width: 700px) {
+			width: 100%;
+			height: 375px;
+			margin: 0;
+			padding: 3em;
+			flex: 1;
 		}
 	}
 
 	&__logo-box {
-		padding: 4rem 0;
+		margin-bottom: 3em;
+
+		@media only screen and (max-width: 700px) {
+			order: -1;
+			display: none;
+		}
 	}
 
-	&__content {
-		padding: 0 25rem 3rem 20rem;
-		display: flex;
-		flex-direction: column;
-		// background-color: rgba(255, 192, 203, 0.479);
-	}
 	&__text {
 		flex: 1;
+		width: 70%;
 		display: flex;
 		flex-direction: column;
-
 		justify-content: center;
+
+		@media only screen and (max-width: 700px) {
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	&__paragraph {
-		margin: 2rem 0 3rem;
+		margin: 2rem 0 3.5rem;
+
+		@media only screen and (max-width: 700px) {
+			padding: 0 2em;
+		}
 	}
 }
 
 .form {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	width: 96%;
+
+	&__item {
+		display: flex; // fill the height
+	}
+
+	&__item:first-child {
+		flex: 1;
+	}
+
 	&__input {
-		padding: 1.6rem 2.4rem;
-		border-radius: 100rem;
 		font-weight: 400;
 		font-family: inherit;
+		letter-spacing: 0.03rem;
 		color: $desaturated-red;
+		background-color: transparent;
 		border: 0.2rem solid $desaturated-red-opaque;
+
+		flex: 1;
+		display: flex;
+		align-items: center;
+
+		padding: 1em 1.4em;
+		padding-right: 3.8em;
+		border-radius: 100rem;
+
+		&:focus {
+			outline: none;
+			border-color: $desaturated-red;
+		}
+
+		&::placeholder {
+			color: $desaturated-red;
+		}
+
+		&:invalid {
+			box-shadow: none;
+		}
+	}
+
+	// on btn click, input gets a new class added, so now we check if the element with that new class is valid
+	.check-valid {
+		&:invalid {
+			background: transparent url(../images/icon-error.svg) no-repeat;
+			background-position: right 7rem center;
+		}
+
+		&:placeholder-shown {
+			background: none;
+		}
 	}
 
 	&__submit {
-		background-color: $desaturated-red;
+		text-align: center;
 		@include bgGradient-red;
 		border: none;
-		padding: 0;
-		text-align: center;
-		padding: 1.6rem 3.2em;
+
+		padding: 1em 2.8em;
+		margin-left: -4em;
+		cursor: pointer;
+
 		border-radius: 100rem;
+
+		box-shadow: 0 1rem 2rem 0 rgba($color: $soft-red, $alpha: 0.2);
+
+		&:hover,
+		&:focus {
+			@include bgGradient-red-2;
+		}
+
+		&:focus {
+			outline: none;
+			border-color: $dark-grayish-red;
+		}
 	}
 }
 

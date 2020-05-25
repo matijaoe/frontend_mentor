@@ -7,7 +7,7 @@ $blue-link: hsl(228, 45%, 44%);
 
 $desaturated-red-opaque: rgba(206, 151, 151, 0.3);
 
-// FON
+// FONT
 $font-size: 1.6rem;
 $font-family: "Josefin Sans", Arial, sans-serif;
 
@@ -21,4 +21,8 @@ $breakpoint-mobile: 37.5rem; // 375px
 
 @mixin bgGradient-red() {
 	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+@mixin bgGradient-red-2() {
+	background: linear-gradient(135deg, hsl(0, 74%, 74%), hsl(0, 93%, 68%));
+
 }
