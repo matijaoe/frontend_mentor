@@ -43,6 +43,9 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column; }
+  @media only screen and (max-width: 550px) {
+    .wrapper {
+      border-radius: 0; } }
 
 .header {
   background: #fefefe;
@@ -98,7 +101,7 @@ body {
     border: none;
     cursor: pointer;
     transition: all 200ms; }
-    .subscription__btn:hover {
+    .subscription__btn:hover, .subscription__btn:focus {
       background: #badd22;
       box-shadow: 0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
       transition: transform 0.2s; }
