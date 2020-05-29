@@ -19,7 +19,7 @@ html {
 
 body {
   font-family: "Karla", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   min-height: 100vh;
   padding: 1em;
@@ -31,25 +31,28 @@ body {
   position: relative;
   background-color: #fbfbfb;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a6dad9' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 500px) {
     body {
       padding: 0; } }
 
 .wrapper {
-  max-width: 80rem;
+  max-width: 74rem;
   width: 100%;
   box-shadow: 0 0.5rem 2rem 0 rgba(49, 49, 49, 0.2);
   border-radius: 0.8rem;
   overflow: hidden;
   display: flex;
   flex-direction: column; }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 500px) {
     .wrapper {
       border-radius: 0; } }
 
 .header {
   background: #fefefe;
   padding: 2.5em; }
+  @media only screen and (max-width: 500px) {
+    .header {
+      padding: 1.75em; } }
   .header h1 {
     color: #2ab2af; }
   .header h2 {
@@ -63,7 +66,7 @@ body {
   color: #e5eff5; }
   .main > * {
     flex: 1; }
-  @media only screen and (max-width: 660px) {
+  @media only screen and (max-width: 620px) {
     .main {
       flex-direction: column; } }
 
@@ -76,6 +79,9 @@ body {
   padding: 2.5em;
   display: flex;
   flex-direction: column; }
+  @media only screen and (max-width: 500px) {
+    .subscription {
+      padding: 1.75em; } }
   .subscription__pricing {
     display: flex;
     align-items: center;
@@ -103,7 +109,7 @@ body {
     transition: all 200ms; }
     .subscription__btn:hover, .subscription__btn:focus {
       background: #badd22;
-      box-shadow: 0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.5rem 0.8rem 0.4rem rgba(0, 0, 0, 0.1);
       transition: transform 0.2s; }
     .subscription__btn:active {
       transform: translateY(0.2rem); }
@@ -111,6 +117,9 @@ body {
 .features {
   background: #29c7c4;
   padding: 2.5em; }
+  @media only screen and (max-width: 500px) {
+    .features {
+      padding: 1.75em; } }
   .features__list {
     list-style: none;
     color: rgba(255, 255, 255, 0.7); }
@@ -122,24 +131,24 @@ body {
   width: 100%;
   padding: 2rem;
   font-size: 0.9em; }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 500px) {
     .footer {
       background: #2ab2af; } }
   .footer__attribution {
     text-align: center; }
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 500px) {
       .footer__attribution {
         color: #ffffffe6; } }
     .footer__attribution a {
       color: #2ab2af;
       display: inline-block;
       transition: all 200ms; }
-      @media only screen and (max-width: 550px) {
+      @media only screen and (max-width: 500px) {
         .footer__attribution a {
           color: currentColor; } }
       .footer__attribution a:hover, .footer__attribution a:active {
         transform: rotate(-5deg); }
-        @media only screen and (max-width: 550px) {
+        @media only screen and (max-width: 500px) {
           .footer__attribution a:hover, .footer__attribution a:active {
             color: #c0df34;
             transform: none; } }
