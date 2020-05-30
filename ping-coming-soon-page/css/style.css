@@ -45,6 +45,10 @@ body {
     line-height: 1.2;
     color: #969696;
     margin-bottom: 0.6em; }
+    @media only screen and (min-width: 620px) {
+      .header__title {
+        font-size: 2em;
+        line-height: 1; } }
     .header__title span {
       font-weight: 900;
       color: #151f29;
@@ -121,9 +125,10 @@ body {
       visibility: hidden; }
 
 .section-hero {
-  margin-bottom: 10em; }
+  margin-bottom: 7em; }
   .section-hero__img {
-    max-width: 100%;
+    max-width: 70rem;
+    width: 100%;
     user-select: none; }
 
 .footer {

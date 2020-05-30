@@ -51,6 +51,7 @@ body {
 
 	display: flex;
 	flex-direction: column;
+
 	@media only screen and (min-width: $breakpoint-md) {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -70,6 +71,11 @@ body {
 		line-height: 1.2;
 		color: $gray;
 		margin-bottom: 0.6em;
+
+		@media only screen and (min-width: $breakpoint-md) {
+			font-size: 2em;
+			line-height: 1;
+		}
 
 		span {
 			font-weight: 900;
@@ -196,10 +202,11 @@ body {
 }
 
 .section-hero {
-	margin-bottom: 10em;
+	margin-bottom: 7em;
 
 	&__img {
-		max-width: 100%;
+		max-width: 70rem;
+		width: 100%;
 		user-select: none;
 	}
 }
