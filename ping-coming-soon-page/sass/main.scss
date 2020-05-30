@@ -127,9 +127,11 @@ body {
 			color: $gray;
 			font-weight: 300;
 		}
+
 		&:hover,
 		&:focus {
 			border-color: $blue;
+			outline: none;
 
 			&::placeholder {
 				color: $very-dark-blue;
@@ -165,6 +167,7 @@ body {
 		&:hover,
 		&:focus {
 			box-shadow: 0 0.4rem 3.5rem 0.4rem rgba($color: $blue, $alpha: 0.4);
+			outline: none;
 		}
 	}
 
