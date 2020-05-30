@@ -82,11 +82,9 @@ body {
     .form__email::placeholder {
       color: #969696;
       font-weight: 300; }
-    .form__email:hover {
+    .form__email:hover, .form__email:focus {
       border-color: #4f7df3; }
-    .form__email:focus {
-      border-color: #4f7df3; }
-      .form__email:focus::placeholder {
+      .form__email:hover::placeholder, .form__email:focus::placeholder {
         color: #151f29; }
     .form__email:invalid {
       box-shadow: none; }
@@ -116,7 +114,7 @@ body {
     border: 1px solid #ff5263; }
   .form .check-valid:placeholder-shown {
     border-color: #c2d3ff; }
-    .form .check-valid:placeholder-shown:focus {
+    .form .check-valid:placeholder-shown:hover, .form .check-valid:placeholder-shown:focus {
       border-color: #4f7df3; }
     .form .check-valid:placeholder-shown ~ .form__invalid-msg {
       opacity: 0;

@@ -121,11 +121,7 @@ body {
 			color: $gray;
 			font-weight: 300;
 		}
-
-		&:hover {
-			border-color: $blue;
-		}
-
+		&:hover,
 		&:focus {
 			border-color: $blue;
 
@@ -185,6 +181,7 @@ body {
 	.check-valid:placeholder-shown {
 		border-color: $pale-blue;
 
+		&:hover,
 		&:focus {
 			border-color: $blue;
 		}
