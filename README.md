@@ -7,7 +7,6 @@
    > - [Live Demo](https://four-card-feature-section-pi-drab.now.sh/)
 
 ### 2. Base Apparel coming soon page 🦞
-*Used: Flexbox, Sass, BEM*
 *In progress*
 > - [Challenge](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0)
 > - [Live Demo](https://base-apparel-liart.now.sh/)
