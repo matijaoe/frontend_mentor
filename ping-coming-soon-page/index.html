@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Ping coming soon page</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta name="author" content="Matija Osrečki">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Ping coming soon page</title>
 
-  We are launching soon!
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;300;600;700&display=swap" rel="stylesheet">
 
-  Subscribe and get notified
+  </head>
 
-  Notify Me
+  <body>
+    <header class="header">
+      <h1 class="header__logo">PING<span class="header__logo--dot">.</span></h1>
+      <h2 class="header__h2">We are launching <span>soon!</span></h2>
+      <p class="header__paragraph">Subscribe and get notified</p>
 
-  &copy; Copyright Ping. All rights reserved.
+      <form action="#" class="form">
+        <input type="email" name="email" id="email" class="form__email" aria-label="Email" placeholder="Your email address" required>
+        <button type="submit" class="form__button">Notify Me</button>
+      </form>
+    </header>
 
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+    <section class="section-hero">
+      <img src="images/illustration-dashboard.png" alt="Dashbord illustration" class="section-hero__img">
+    </section>
+
+    <footer class="footer">
+      <div class="footer__socials">
+
+        <div class="footer__social-container">
+          <box-icon type='logo' name='facebook' class="footer__social-icon"></box-icon>
+        </div>
+        <div class="footer__social-container">
+          <box-icon type='logo' name='twitter' class="footer__social-icon"></box-icon>
+        </div>
+        <div class="footer__social-container">
+          <a href=""></a>
+          <box-icon type='logo' name='instagram-alt' class="footer__social-icon"></box-icon>
+        </div>
+      </div>
+      <p class="footer__copy">&copy; Copyright Ping. All rights reserved.</p>
+      <p class="footer__attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/Mat2ja/frontend_mentor">Matija Osrečki</a>.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+  </body>
+
 </html>
