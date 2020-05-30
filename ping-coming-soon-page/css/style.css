@@ -18,33 +18,34 @@ body {
   font-weight: 300;
   font-family: "Libre Franklin", sans-serif;
   line-height: 1.5;
-  color: #151f29;
-  max-width: 820rem;
-  padding: 4em 1.2em 1.2em;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column; }
+  color: #151f29; }
 
 ::selection {
   background: #c2d3ff;
   color: #151f29; }
 
+.wrapper {
+  padding: 4em 1.2em 1.2em;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (min-width: 620px) {
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto; } }
+
 .header {
   padding: 0 1.3em; }
   .header__logo {
-    font-size: 1.25em;
-    font-weight: 900;
     margin-bottom: 3.6rem; }
-    .header__logo--dot {
-      color: #4f7df3; }
-  .header__h2 {
+  .header__title {
     font-size: 1.4em;
     font-weight: 200;
-    line-height: 1;
+    line-height: 1.2;
     color: #969696;
     margin-bottom: 0.6em; }
-    .header__h2 span {
+    .header__title span {
       font-weight: 900;
       color: #151f29;
       margin-left: 1px; }
@@ -52,9 +53,14 @@ body {
     font-size: 0.7em; }
 
 .form {
-  margin: 3.6rem 0 6.5rem;
+  margin: 3.6rem auto 6.5rem;
+  max-width: 60rem;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative; }
+  @media only screen and (min-width: 620px) {
+    .form {
+      flex-direction: row; } }
   .form > * {
     font-size: 0.65em;
     font-family: inherit;
@@ -68,20 +74,53 @@ body {
     background: white;
     position: relative;
     transition: all 250ms; }
+    @media only screen and (min-width: 620px) {
+      .form__email {
+        flex: 1;
+        margin-bottom: 0;
+        margin-right: 1.2rem; } }
     .form__email::placeholder {
-      color: rgba(21, 31, 41, 0.6); }
-    .form__email:hover, .form__email:focus {
+      color: #969696;
+      font-weight: 300; }
+    .form__email:hover {
       border-color: #4f7df3; }
+    .form__email:focus {
+      border-color: #4f7df3; }
+      .form__email:focus::placeholder {
+        color: #151f29; }
+    .form__email:invalid {
+      box-shadow: none; }
+  .form__invalid-msg {
+    color: #ff5263;
+    font-weight: 300;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms; }
   .form__button {
     font-weight: 600;
     letter-spacing: 0.4px;
     color: white;
     background-color: #4f7df3;
     box-shadow: 0 0.4rem 2.5rem 0.1rem rgba(79, 125, 243, 0.4);
+    padding: 1em 3em;
     cursor: pointer;
     transition: all 250ms; }
     .form__button:hover, .form__button:focus {
       box-shadow: 0 0.4rem 2.5rem 0.5rem rgba(79, 125, 243, 0.4); }
+  .check-valid:invalid ~ .form__invalid-msg {
+    opacity: 1;
+    visibility: visible; }
+  .form .check-valid:invalid {
+    border: 1px solid #ff5263; }
+  .form .check-valid:placeholder-shown {
+    border-color: #c2d3ff; }
+    .form .check-valid:placeholder-shown:focus {
+      border-color: #4f7df3; }
+    .form .check-valid:placeholder-shown ~ .form__invalid-msg {
+      opacity: 0;
+      visibility: hidden; }
 
 .section-hero {
   margin-bottom: 10em; }
@@ -103,11 +142,10 @@ body {
     display: grid;
     place-content: center;
     margin: 0 0.5rem 3rem;
-    transition: all 750ms;
+    transition: all 250ms;
     cursor: pointer; }
     .footer__social-container:hover {
-      border-color: #4f7df3;
-      box-shadow: 0 0 6rem 0.2rem rgba(79, 125, 243, 0.4); }
+      border-color: #4f7df3; }
   .footer__social-icon {
     fill: #4f7df3; }
   .footer__copy {
