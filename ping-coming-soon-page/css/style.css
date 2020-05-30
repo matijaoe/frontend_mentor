@@ -99,7 +99,7 @@ body {
     top: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: all 200ms; }
+    transition: all 250ms; }
   .form__button {
     font-weight: 600;
     letter-spacing: 0.4px;
@@ -110,7 +110,7 @@ body {
     cursor: pointer;
     transition: all 250ms; }
     .form__button:hover, .form__button:focus {
-      box-shadow: 0 0.4rem 2.5rem 0.5rem rgba(79, 125, 243, 0.4); }
+      box-shadow: 0 0.4rem 3.5rem 0.4rem rgba(79, 125, 243, 0.4); }
   .check-valid:invalid ~ .form__invalid-msg {
     opacity: 1;
     visibility: visible; }
