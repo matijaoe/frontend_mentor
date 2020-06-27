@@ -1,0 +1,15 @@
+{
+	"name": "insure-landing-page",
+	"version": "1.0.0",
+	"description": "![Design preview for the Insure landing page coding challenge](./design/desktop-preview.jpg)",
+	"main": "index.js",
+	"scripts": {
+		"watch:sass": "node-sass sass/main.scss css/style.css -w"
+	},
+	"keywords": [],
+	"author": "Matija Osrecki",
+	"license": "ISC",
+	"dependencies": {
+		"node-sass": "^4.14.1"
+	}
+}
