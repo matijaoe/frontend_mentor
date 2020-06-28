@@ -207,7 +207,10 @@ img {
     top: 0;
     right: 0;
     z-index: 5; }
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 920px) {
+      .header::after {
+        height: 115%; } }
+    @media only screen and (max-width: 600px) {
       .header::after {
         background: none; } }
   .header__content {
@@ -245,8 +248,8 @@ img {
         flex: 1;
         padding: 8rem 2em;
         align-items: center; } }
-    @media only screen and (max-width: 700px) {
-      .header__title::before {
+    @media only screen and (max-width: 600px) {
+      .header__title::after {
         content: "";
         background: url(../images/bg-pattern-intro-left-mobile.svg) no-repeat top left;
         width: 100%;
@@ -263,7 +266,8 @@ img {
     position: absolute;
     margin-left: auto;
     top: 0;
-    right: 0; }
+    right: 0;
+    margin-right: 3em; }
     @media only screen and (max-width: 920px) {
       .header__img-box {
         position: relative;
@@ -278,7 +282,7 @@ img {
     object-fit: cover; }
 
 .main {
-  margin-top: 7em;
+  margin-top: 10em;
   padding-top: 8em;
   padding-bottom: 8em; }
   @media only screen and (max-width: 700px) {

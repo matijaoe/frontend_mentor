@@ -309,7 +309,10 @@ img {
 		right: 0;
 		z-index: 5;
 
-		@media only screen and (max-width: $bp-md) {
+		@media only screen and (max-width: $bp-lg) {
+			height: 115%;
+		}
+		@media only screen and (max-width: $bp-sm) {
 			background: none;
 		}
 	}
@@ -363,8 +366,8 @@ img {
 			align-items: center;
 		}
 
-		@media only screen and (max-width: $bp-md) {
-			&::before {
+		@media only screen and (max-width: $bp-sm) {
+			&::after {
 				content: "";
 				background: url(../images/bg-pattern-intro-left-mobile.svg)
 					no-repeat top left;
@@ -389,6 +392,7 @@ img {
 		margin-left: auto;
 		top: 0;
 		right: 0;
+		margin-right: 3em;
 
 		@media only screen and (max-width: $bp-lg) {
 			position: relative;
@@ -408,7 +412,7 @@ img {
 }
 
 .main {
-	margin-top: 7em;
+	margin-top: 10em;
 	padding-top: 8em;
 	padding-bottom: 8em;
 
