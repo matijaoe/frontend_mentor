@@ -21,7 +21,7 @@
 > - [Challenge](https://www.frontendmentor.io/challenges/ping-single-column-coming-soon-page-5cadd051fec04111f7b848da)
 > - [Live Demo](https://ping-coming-soon-page-iota.now.sh/)
 
-### 2. Insure Landing Page 🦅
+### 5. Insure Landing Page 🦅
 *Sass, BEM, Flexbox & Grid*
 > - [Challenge](https://www.frontendmentor.io/challenges/insure-landing-page-uTU68JV8)
 > - [Live Demo](https://insure-landing-page-coral.vercel.app)
