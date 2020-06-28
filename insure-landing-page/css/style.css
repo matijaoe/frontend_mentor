@@ -35,6 +35,9 @@ a {
 ul {
   list-style-type: none; }
 
+img {
+  user-select: none; }
+
 .row {
   max-width: 1440px;
   margin: 0 auto;
@@ -77,7 +80,7 @@ ul {
   .nav__list {
     display: flex;
     align-items: center; }
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 600px) {
       .nav__list {
         display: none; } }
   .nav__logo-box {
@@ -106,7 +109,7 @@ ul {
     border: 2px solid #2b272f;
     padding: 0.2em;
     cursor: pointer; }
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 600px) {
       .nav__mobile-icon-box {
         display: flex; } }
   .nav__mobile-icon {
@@ -116,8 +119,7 @@ ul {
     .nav__mobile-icon--close {
       display: none; }
   .nav--mobile {
-    display: flex;
-    flex-direction: column;
+    display: none;
     background: #2b272f url(../images/bg-pattern-mobile-nav.svg) no-repeat bottom right/contain;
     padding: 1em 1em 20em;
     font-size: 1.8rem; }
@@ -162,9 +164,9 @@ ul {
   position: relative; }
   @media only screen and (max-width: 920px) {
     .header {
-      padding-top: 4em;
+      padding-top: 0;
       padding-bottom: 4em; } }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 600px) {
     .header {
       text-align: center; } }
   .header::before {
@@ -186,7 +188,10 @@ ul {
     position: relative; }
     @media only screen and (max-width: 920px) {
       .header__content {
-        flex-direction: column; } }
+        flex-direction: column; }
+        .header__content.row {
+          padding-left: 0;
+          padding-right: 0; } }
   .header .heading-1::before {
     content: "";
     background: #837d87;
@@ -202,16 +207,18 @@ ul {
   .header__title {
     flex: 0 1 calc(100% - 520px - 10vw);
     position: relative;
-    padding-top: 7rem;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; }
+    align-items: flex-start;
+    padding-top: 7rem;
+    padding-left: 2em;
+    padding-right: 2em; }
     @media only screen and (max-width: 920px) {
       .header__title {
         flex: 1;
         padding-top: 4rem; } }
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 600px) {
       .header__title {
         align-items: center; } }
   .header__paragraph {
@@ -229,7 +236,6 @@ ul {
         order: -1;
         width: 100%;
         margin: 0 auto;
-        max-width: 400px;
         height: 100%; } }
   .header__img {
     display: block;
