@@ -9,10 +9,14 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scrollbar-width: thin; }
   @media only screen and (max-width: 1150px) {
     html {
       font-size: 56.25%; } }
+  @media only screen and (max-width: 700px) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-size: 1.6rem;
@@ -150,11 +154,20 @@ img {
       font-size: 4.2em; } }
   @media only screen and (max-width: 920px) {
     .heading-1 {
-      font-size: 10vw; } }
+      font-size: 4em; } }
+  @media only screen and (max-width: 600px) {
+    .heading-1 {
+      font-size: 3.5em; } }
+  @media only screen and (max-width: 400px) {
+    .heading-1 {
+      font-size: 3em; } }
 
 .heading-2 {
   font-size: 3.8em;
   margin-bottom: 1.2em; }
+  @media only screen and (max-width: 400px) {
+    .heading-2 {
+      font-size: 2.8em; } }
 
 .header {
   background: #2d2640;
@@ -164,14 +177,17 @@ img {
   position: relative; }
   @media only screen and (max-width: 920px) {
     .header {
-      padding-top: 0;
-      padding-bottom: 4em; } }
+      padding-top: 4rem;
+      padding-bottom: 0; } }
+  @media only screen and (max-width: 700px) {
+    .header {
+      padding-top: 0; } }
   @media only screen and (max-width: 600px) {
     .header {
       text-align: center; } }
   .header::before {
     content: "";
-    background: transparent url(../images/bg-pattern-intro-right-desktop.svg) no-repeat top right;
+    background: url(../images/bg-pattern-intro-right-desktop.svg) no-repeat top right;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -180,9 +196,20 @@ img {
     z-index: 5; }
     @media only screen and (max-width: 700px) {
       .header::before {
-        background: transparent url(../images/bg-pattern-intro-right-mobile.svg) no-repeat top right;
-        bottom: -200px;
-        right: 0; } }
+        background: url(../images/bg-pattern-intro-right-mobile.svg) no-repeat bottom right;
+        height: 120%; } }
+  .header::after {
+    content: "";
+    background: url(../images/bg-pattern-intro-left-desktop.svg) no-repeat bottom left;
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5; }
+    @media only screen and (max-width: 700px) {
+      .header::after {
+        background: none; } }
   .header__content {
     display: flex;
     position: relative; }
@@ -211,16 +238,23 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 7rem;
-    padding-left: 2em;
-    padding-right: 2em; }
+    padding-top: 7rem; }
     @media only screen and (max-width: 920px) {
       .header__title {
+        text-align: center;
         flex: 1;
-        padding-top: 4rem; } }
-    @media only screen and (max-width: 600px) {
-      .header__title {
+        padding: 8rem 2em;
         align-items: center; } }
+    @media only screen and (max-width: 700px) {
+      .header__title::before {
+        content: "";
+        background: url(../images/bg-pattern-intro-left-mobile.svg) no-repeat top left;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5; } }
   .header__paragraph {
     margin: 1.6em 0; }
   .header__img-box {
