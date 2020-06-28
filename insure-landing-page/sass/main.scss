@@ -34,7 +34,7 @@ html {
 		font-size: 56.25%; // 9px
 	}
 	@media only screen and (max-width: $bp-md) {
-		font-size: 50%; // 9px
+		font-size: 50%; // 8px
 	}
 }
 
@@ -198,6 +198,8 @@ img {
 		padding: 1em 1em 20em;
 		font-size: 1.8rem;
 	}
+
+	//TODO solve mobile-menu showing od destop layout if stayed open
 
 	&__mobile-menu {
 		display: flex;
