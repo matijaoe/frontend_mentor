@@ -7,7 +7,7 @@
    > - [Live Demo](https://four-card-feature-section-pi-drab.now.sh/)
 
 ### 2. Base Apparel coming soon page 🦞
-*In progress*
+*Kinda unfinished 🤷‍♂️*
 > - [Challenge](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0)
 > - [Live Demo](https://base-apparel-liart.now.sh/)
 
@@ -21,8 +21,15 @@
 > - [Challenge](https://www.frontendmentor.io/challenges/ping-single-column-coming-soon-page-5cadd051fec04111f7b848da)
 > - [Live Demo](https://ping-coming-soon-page-iota.now.sh/)
 
-### 5. Insure Landing Page 🦅
+### 5. Insure Landing Page 
 *Sass, BEM, Flexbox & Grid*
 > - [Challenge](https://www.frontendmentor.io/challenges/insure-landing-page-uTU68JV8)
 > - [Live Demo](https://insure-landing-page-coral.vercel.app)
+
+### 6. Fylo Dark Theme Landing Page 👽
+*Sass, BEM, Flexbox & Grid*
+> - [Challenge](https://www.frontendmentor.io/challenges/fylo-dark-theme-landing-page-5ca5f2d21e82137ec91a50fd)
+> - [Live Demo](https://fylo-mocha.vercel.app)
+
+
 
