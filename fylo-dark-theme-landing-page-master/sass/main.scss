@@ -47,6 +47,10 @@ html {
 	line-height: 1.5;
 
 	scrollbar-width: thin;
+
+	@media only screen and (max-width: 900px) {
+		font-size: 56.25%;
+	}
 }
 
 body {
@@ -54,6 +58,7 @@ body {
 	font-family: var(--ff-main);
 	color: var(--white-opaque);
 	background: var(--bg-intro);
+	overflow-x: hidden;
 }
 
 ::selection {
@@ -63,12 +68,14 @@ body {
 
 img {
 	user-select: none;
+	max-width: 100%;
 }
 
 .row {
 	max-width: 1040px;
 	width: 100%;
 	margin: 0 auto;
+	padding: 0 3.2rem;
 }
 
 h1,
@@ -94,6 +101,10 @@ a {
 	padding: 2.4rem 0;
 	font-weight: 500;
 
+	@media only screen and (max-width: 780px) {
+		margin-bottom: 3.6rem;
+	}
+
 	&__list {
 		list-style: none;
 		display: flex;
@@ -103,6 +114,16 @@ a {
 
 	&__logo img {
 		max-width: 125px;
+		position: relative;
+		top: 3px;
+
+		@media only screen and (max-width: 900px) {
+			max-width: 110px;
+		}
+
+		@media only screen and (max-width: 780px) {
+			max-width: 90px;
+		}
 	}
 
 	&__item {
@@ -112,15 +133,21 @@ a {
 	}
 
 	&__link {
+		transition: all 200ms;
+
 		&:link,
 		&:visited {
-			padding: 0.5em 1em;
+			margin-left: 2em;
 		}
 
 		&:hover,
 		&:active,
 		&:focus {
-			color: var(--white);
+			color: var(--cyan);
+		}
+
+		@media only screen and (max-width: 450px) {
+			display: none;
 		}
 	}
 }
@@ -135,6 +162,11 @@ section {
 	font-size: 3rem;
 	line-height: 1.4;
 	margin: 2.4rem 0;
+
+	@media only screen and (max-width: 780px) {
+		font-size: 2.5rem;
+		line-height: 1.2;
+	}
 }
 
 .intro {
@@ -142,6 +174,10 @@ section {
 	background: url(../images/bg-curvy-desktop.svg) repeat-x;
 	background-position: bottom center;
 	background-size: contain;
+
+	@media only screen and (max-width: 900px) {
+		padding-bottom: 16rem;
+	}
 
 	&__flex {
 		display: flex;
@@ -154,7 +190,11 @@ section {
 	}
 
 	&__illustration {
-		max-width: 100%;
+		max-width: 60rem;
+
+		@media only screen and (max-width: 780px) {
+			max-width: 90%;
+		}
 	}
 
 	&__desc {
@@ -179,9 +219,11 @@ section {
 	cursor: pointer;
 	box-shadow: var(--box-shadow);
 
-	&:hover,
-	&:active,
-	&:focus {
+	transition: transform 100ms;
+	transform-origin: bottom;
+
+	&:active {
+		transform: translateY(2px);
 	}
 }
 
@@ -200,6 +242,10 @@ section {
 		gap: 6.4rem;
 		max-width: 750px;
 		margin: 0 auto;
+
+		@media only screen and (max-width: 780px) {
+			grid-template-columns: 1fr;
+		}
 	}
 }
 
@@ -208,6 +254,10 @@ section {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+
+	@media only screen and (max-width: 780px) {
+		max-width: 34rem;
+	}
 
 	&__icon {
 		margin-bottom: 2.4rem;
@@ -227,6 +277,10 @@ section {
 .heading-2 {
 	font-size: 2.4em;
 	line-height: 1.2;
+
+	@media only screen and (max-width: 780px) {
+		font-size: 1.8em;
+	}
 }
 
 .about {
@@ -234,7 +288,11 @@ section {
 		display: flex;
 
 		> * {
-			flex: 1;
+			flex: 0 1 50%;
+		}
+
+		@media only screen and (max-width: 780px) {
+			flex-direction: column;
 		}
 	}
 
@@ -243,10 +301,29 @@ section {
 		flex-direction: column;
 		justify-content: center;
 		margin-left: 4.8rem;
+
+		@media only screen and (max-width: 780px) {
+			margin: 0 auto;
+			max-width: 50rem;
+		}
 	}
 
 	&__title {
 		max-width: 30rem;
+
+		@media only screen and (max-width: 780px) {
+			max-width: 100%;
+		}
+	}
+
+	img {
+		max-width: 40rem;
+		width: 100%;
+		margin: 0 auto;
+
+		@media only screen and (max-width: 780px) {
+			margin-bottom: 4.8rem;
+		}
 	}
 
 	&__paragraph {
@@ -266,12 +343,32 @@ section {
 	width: max-content;
 	padding-bottom: 0.2rem;
 	text-decoration: none;
-	border-bottom: 1px solid;
+
+	position: relative;
+
+	transition: all 200ms;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 1px;
+		width: 100%;
+		background: var(--cyan);
+		transform: scale(1, 1);
+	}
+
+	&:hover {
+		color: var(--white);
+	}
 
 	img {
-		height: 1em;
-		width: 1em;
-		vertical-align: sub;
+		height: 14px;
+		width: 14px;
+		margin: 0;
+		position: relative;
+		top: 2px;
 	}
 }
 
@@ -280,10 +377,18 @@ section {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2.4rem;
-
 		position: relative;
-
 		padding-bottom: 20rem;
+
+		@media only screen and (max-width: 780px) {
+			grid-template-columns: 1fr;
+			justify-content: center;
+			gap: 3.2rem;
+			max-width: 36rem;
+			margin: 0 auto;
+
+			padding-bottom: 36rem;
+		}
 
 		&::before {
 			content: url(../images/bg-quotes.png);
@@ -291,6 +396,12 @@ section {
 			top: -3.5rem;
 			left: -1rem;
 			z-index: 1;
+
+			@media only screen and (max-width: 780px) {
+				grid-template-columns: 40rem;
+				justify-content: center;
+				gap: 3.2rem;
+			}
 		}
 	}
 }
@@ -343,16 +454,32 @@ section {
 
 		border-radius: var(--border-radius-big);
 		box-shadow: var(--box-shadow);
+
+		@media only screen and (max-width: 780px) {
+			padding: 4.2rem;
+			width: 40rem;
+		}
+
+		@media only screen and (max-width: 450px) {
+			width: 100%;
+		}
 	}
 
 	&__text {
-		max-width: 60rem;
+		max-width: 56rem;
 		margin: 0 auto;
+
+		@media only screen and (max-width: 450px) {
+		}
 	}
 
 	.heading-3 {
 		font-size: 2em;
 		line-height: 1;
+
+		@media only screen and (max-width: 780px) {
+			font-size: 1.6em;
+		}
 	}
 
 	&__para {
@@ -362,6 +489,15 @@ section {
 
 .email-signup {
 	display: flex;
+
+	@media only screen and (max-width: 780px) {
+		flex-direction: column;
+	}
+
+	@media only screen and (max-width: 450px) {
+		width: 90%;
+		margin: 0 auto;
+	}
 
 	input[type='email'] {
 		flex: 1;
@@ -375,6 +511,11 @@ section {
 		margin-right: 2.4rem;
 		border: none;
 
+		@media only screen and (max-width: 780px) {
+			margin-right: 0;
+			margin-bottom: 1.6rem;
+		}
+
 		&::placeholder {
 			color: gray;
 		}
@@ -382,6 +523,9 @@ section {
 
 	.btn {
 		padding: 0.9em 3em;
+
+		@media only screen and (max-width: 450px) {
+		}
 	}
 }
 
@@ -398,6 +542,10 @@ section {
 
 	&__content {
 		display: flex;
+
+		@media only screen and (max-width: 680px) {
+			flex-direction: column;
+		}
 	}
 
 	&__icon {
@@ -408,7 +556,12 @@ section {
 		display: flex;
 		align-items: flex-start;
 
-		margin-right: 12.8rem;
+		margin-right: auto;
+
+		@media only screen and (max-width: 900px) {
+			flex-direction: column;
+			margin-right: 0;
+		}
 	}
 
 	&__location {
@@ -417,6 +570,11 @@ section {
 		gap: 1.6rem;
 		max-width: 30rem;
 		margin-right: 6.4rem;
+
+		@media only screen and (max-width: 900px) {
+			margin-right: 0;
+			margin-bottom: 2.4rem;
+		}
 
 		img {
 			transform: translateY(0.5rem);
@@ -441,9 +599,25 @@ section {
 	&__nav {
 		display: flex;
 
+		@media only screen and (max-width: 900px) {
+			margin-left: auto;
+		}
+
+		@media only screen and (max-width: 680px) {
+			flex-direction: column;
+			margin-left: 0;
+			margin-bottom: 4.8rem;
+		}
+
 		&-list {
 			&--1 {
-				margin-right: 6.4rem;
+				margin-right: 4.8rem;
+
+				@media only screen and (max-width: 680px) {
+					margin-right: 0;
+					margin-bottom: 4.8rem;
+					margin-top: 4.8rem;
+				}
 			}
 		}
 
@@ -454,6 +628,7 @@ section {
 		&--link {
 			border-bottom: 1px solid transparent;
 			padding-bottom: 0.1em;
+			transition: all 200ms;
 
 			&:hover,
 			&:focus {
@@ -468,14 +643,55 @@ section {
 
 		display: flex;
 		align-items: start;
+		fill: currentColor;
+
+		@media only screen and (max-width: 900px) {
+			margin-left: 3.6rem;
+		}
+
+		@media only screen and (max-width: 680px) {
+			justify-content: center;
+			margin-left: 0;
+		}
+
+		&--box {
+			border: 1px solid;
+			border-radius: 50%;
+			width: 3.2rem;
+			height: 3.2rem;
+
+			display: grid;
+			place-items: center;
+
+			cursor: pointer;
+
+			&:not(:first-of-type) {
+				margin-left: 0.6em;
+			}
+
+			&:hover .footer__social--icon,
+			&:active .footer__social--icon,
+			&:focus .footer__social--icon {
+				color: var(--cyan);
+			}
+		}
+
+		&--icon {
+			width: 1.8rem;
+			transition: all 200ms;
+		}
 	}
 
 	.attribution {
 		margin-top: 4.8rem;
+		text-align: center;
+		font-size: 1.1rem;
 
 		a {
 			color: var(--cyan);
 			border-bottom: 1px solid transparent;
+
+			transition: all 200ms;
 
 			&:hover,
 			&:focus {

@@ -13,37 +13,29 @@
 
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
 
-		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-		<style>
-			.attribution {
-				font-size: 11px;
-				text-align: center;
-			}
 
-			.attribution a {
-				color: hsl(228, 45%, 44%);
-			}
-		</style>
 	</head>
 
 	<body>
-		<nav class="nav row">
-			<ul class="nav__list">
-				<li class="nav__item nav__item--logo">
-					<a href="#" class="nav__logo">
-						<img src="images/logo.svg" alt="">
-					</a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__link">Features</a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__link">Team</a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__link">Sign In</a>
-				</li>
-			</ul>
+		<nav class="nav">
+			<div class="row">
+				<ul class="nav__list">
+					<li class="nav__item nav__item--logo">
+						<a href="#" class="nav__logo">
+							<img src="images/logo.svg" alt="">
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="#" class="nav__link">Features</a>
+					</li>
+					<li class="nav__item">
+						<a href="#" class="nav__link">Team</a>
+					</li>
+					<li class="nav__item">
+						<a href="#" class="nav__link">Sign In</a>
+					</li>
+				</ul>
+			</div>
 		</nav>
 
 		<header class="intro">
@@ -226,12 +218,20 @@
 						</ul>
 					</div>
 					<div class="footer__social">
-						
+						<div class="footer__social--box">
+							<box-icon type='logo' name='facebook' class="footer__social--icon"></box-icon>
+						</div>
+						<div class="footer__social--box">
+							<box-icon name='twitter' type='logo' class="footer__social--icon"></box-icon>
+						</div>
+						<div class="footer__social--box">
+							<box-icon name='instagram' type='logo' class="footer__social--icon"></box-icon>
+						</div>
 					</div>
 				</div>
 				<p class="attribution">
-					Challenge by <a href="https://github.com/Mat2ja/frontend_mentor" target="_blank">Frontend Mentor</a>.
-					Coded by <a href="#">Matija Osrečki</a>.
+					Challenge by <a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>.
+					Coded by <a href="https://github.com/Mat2ja/frontend_mentor">Matija Osrečki</a>.
 				</p>
 		</footer>
 
