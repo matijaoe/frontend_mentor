@@ -6,6 +6,9 @@
  >  - [Challenge](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK)
    > - [Live Demo](https://four-card-feature-section-pi-drab.now.sh/)
 
+<img src='screnshots/ffc.png'>
+
+
 ### 2. Base Apparel coming soon page 🦞
 *Kinda unfinished 🤷‍♂️*
 > - [Challenge](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0)
