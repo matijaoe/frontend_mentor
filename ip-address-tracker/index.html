@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="css/loader.css">
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
     </head>
@@ -22,7 +23,7 @@
         <header class="header">
             <h1 class="h1">IP Address Tracker</h1>
             <form class="form">
-                <input type="text" name='ip-address' id="ip-address" class='form__ip-input' placeholder="Search for any IP address or domain" aria-label='ip address or domain' autocomplete="off">
+                <input type="text" name='ip-address' id="ip-address" class='form__ip-input' placeholder="Search for any IP address" aria-label='ip address or domain' autocomplete="off">
                 <button class="btn form__submit"><img src="images/icon-arrow.svg" alt="arrow icon"></button>
             </form class="form">
             <section class="details">
@@ -59,6 +60,7 @@
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+        <script src="js/pace.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 
