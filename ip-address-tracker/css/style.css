@@ -140,8 +140,7 @@ button {
 
 .map {
   min-height: 400px;
-  flex: 1;
-  z-index: -1; }
+  flex: 1; }
   @media only screen and (max-width: 800px) {
     .map {
       min-height: 700px; } }
@@ -162,13 +161,14 @@ button {
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.3rem;
-  padding: 0.5em;
+  padding: 0.85em;
   border-radius: 1.4rem;
   text-align: center;
   max-width: 100%;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
-  color: #404040; }
+  color: #404040;
+  z-index: 9999999; }
   .attribution .link {
     text-decoration: none;
     color: black;
@@ -176,5 +176,6 @@ button {
     .attribution .link:hover {
       color: #4e82e4; }
 
-.leaflet-fade-anim .leaflet-tile, .leaflet-zoom-anim .leaflet-zoom-animated {
+.leaflet-fade-anim .leaflet-tile,
+.leaflet-zoom-anim .leaflet-zoom-animated {
   will-change: auto !important; }

@@ -195,7 +195,6 @@ button {
 .map {
 	min-height: 400px;
 	flex: 1;
-	z-index: -1;
 
 	@media only screen and(max-width:800px) {
 		min-height: 700px;
@@ -213,6 +212,7 @@ button {
 .hide {
 	display: none;
 }
+
 .attribution {
 	position: fixed;
 	bottom: 5rem;
@@ -220,7 +220,7 @@ button {
 	transform: translateX(-50%);
 
 	font-size: 1.3rem;
-	padding: 0.5em;
+	padding: 0.85em;
 
 	border-radius: $border-radius;
 
@@ -229,7 +229,9 @@ button {
 
 	background: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(3px);
-	color: hsl(0, 0%, 25%);
+    color: hsl(0, 0%, 25%);
+    
+    z-index: 9999999;
 
 	.link {
 		text-decoration: none;
