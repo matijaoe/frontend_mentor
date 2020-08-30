@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Matija Osrečki">
+
+        <title>IP Address Tracker</title>
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+
+        <header class="header">
+            <h1 class="h1">IP Address Tracker</h1>
+            <form class="form">
+                <input type="text" name='ip-address' id="ip-address" class='form__ip-input' placeholder="Search for any IP address or domain" aria-label='ip address or domain' autocomplete="off">
+                <button class="btn form__submit"><img src="images/icon-arrow.svg" alt="arrow icon"></button>
+            </form class="form">
+            <section class="details">
+                <div class="detail">
+                    <label class='detail__label'>IP Address</label>
+                    <p class="detail__info" id='ip'>192.212.174.191</p>
+                </div>
+                <div class="detail">
+                    <label class='detail__label'>Location</label>
+                    <p class="detail__info" id='location'>Brooklyn, NY, 100001</p>
+                </div>
+                <div class="detail">
+                    <label class='detail__label'>Timezone</label>
+                    <p class="detail__info" id='timezone'>UTC -05:00</p>
+                </div>
+                <div class="detail">
+                    <label class='detail__label'>ISP</label>
+                    <p class="detail__info" id='isp'>SpaceX Starlink</p>
+                </div>
+            </section>
+        </header>
+
+        <section class="map"></section>
+
+        <!-- <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="#">Your Name Here</a>.
+        </div> -->
+
+        <script src="js/app.js"></script>
+    </body>
+
+</html>

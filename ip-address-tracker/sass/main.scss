@@ -1,0 +1,149 @@
+$font-family: 'Rubik', sans-serif;
+$font-size: 1.8rem;
+$very-dark-gray: hsl(0, 0%, 17%);
+$very-dark-gray-2: hsl(0, 0%, 10%);
+$dark-gray: hsl(0, 0%, 59%);
+$border-radius: 1.4rem;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	font-family: $font-family;
+}
+
+body {
+	font-size: $font-size;
+	display: flex;
+	flex-direction: column;
+	color: $very-dark-gray;
+}
+
+input,
+button {
+	font: inherit;
+}
+
+.header {
+	background: url(../images/pattern-bg.png) no-repeat;
+	background-size: cover;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2em;
+	padding-bottom: 7.5em;
+	position: relative;
+}
+
+.h1 {
+	text-align: center;
+	color: #fff;
+	font-size: 1.65em;
+	font-weight: 500;
+}
+
+.form {
+	max-width: 50rem;
+	width: 100%;
+	display: flex;
+	background: pink;
+	border-radius: $border-radius;
+	overflow: hidden;
+	margin-top: 3.2rem;
+
+	&__ip-input {
+		border: none;
+		padding: 1rem 1em;
+		flex: 1;
+		border: none;
+		font-weight: 500;
+		letter-spacing: 1px;
+
+		&::placeholder {
+			color: $dark-gray;
+			font-weight: 300;
+			letter-spacing: initial;
+			font-size: 1.6rem;
+		}
+	}
+
+	&__submit {
+		padding: 1.6rem 1.8rem;
+		border: none;
+		background: $very-dark-gray;
+
+		cursor: pointer;
+		transition: all 200ms;
+
+		&:hover {
+			background: $very-dark-gray-2;
+		}
+	}
+
+	img {
+		display: block;
+	}
+}
+
+.details {
+	max-width: 120rem;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2rem;
+
+	border-radius: $border-radius;
+	transform: translate(-50%, 50%);
+	box-shadow: 0 0.5rem 1rem 0.2rem rgba($dark-gray, 0.1);
+	background: #fff;
+}
+
+.detail {
+	margin: 2em 0;
+	padding: 0 2em;
+	padding-right: 4em;
+	line-height: 1.3;
+
+	border-right: 1px solid #e2e2e2;
+
+	display: flex;
+	flex-direction: column;
+
+	&:last-child {
+		border-right: none;
+	}
+
+	&__label {
+		font-size: 1rem;
+		color: $dark-gray;
+		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 1px;
+		margin-bottom: 0.5em;
+	}
+
+	&__info {
+		font-weight: 400;
+		font-size: 1.2em;
+	}
+}
+
+.map {
+    background: lightslategrey;
+    height: 75vh;
+}
