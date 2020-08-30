@@ -7,33 +7,32 @@ const ipEl = document.querySelector('#ip');
 const locationEl = document.querySelector('#location');
 const timezoneEl = document.querySelector('#timezone');
 const ispEl = document.querySelector('#isp');
+let myMap = L.map('map');
 
 const api = {
-    keyOG: 'at_Ms5M0n5CIXhBR7UQhqNIE2agBZEoa',
-    key: 'at_95EQQjQ0h1brmuaMeVmKX6OO99ajO',
+    key: 'at_Ms5M0n5CIXhBR7UQhqNIE2agBZEoa',
     proxy: 'https://cors-anywhere.herokuapp.com/',
     baseUrl: 'https://geo.ipify.org/api/v1',
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    axios.get(`${api.proxy}https://ipapi.co/json/`)
+        .then(data => {
+            const myIp = data.data.ip;
+            console.log(data.data)
+            getIpInfo(myIp)
+        })
 
-document.addEventListener('load', () => {
-    // axios.get(`${api.proxy}https://ipapi.co/json/`)
-    //     .then(data => console.log(data.ip))
-    // axios.get(`${api.proxy}https://ipapi.co/json/`)
-    //     .then(data => console.log(data.ip))
 });
 
 
 async function getIpInfo(ip = '192.212.174.101') {
     const { proxy, baseUrl, key } = api;
     try {
-        const response = await axios.get(`${proxy}${baseUrl}`, {
-            apiKey: key,
-            ipAddress: ip
-        })
-        // const response = await axios.get(`${api.proxy}${baseUrl}?apiKey=${key}&ipAddress=${ip}`)
-        console.log(response);
+        const response = await axios.get(`${api.proxy}${baseUrl}?apiKey=${key}&ipAddress=${ip}`)
+        console.log(response.data);
+        displayInfo(response.data)
     } catch (error) {
         console.error(error);
     }
@@ -48,11 +47,12 @@ form.addEventListener('submit', (e) => {
     console.log('submitted');
 })
 
+
 const mapboxToken = 'pk.eyJ1IjoibWF0MmphIiwiYSI6ImNrZWd2cmVuNjFncTAycmx0b24xMXYxdWEifQ.Q64m2Dkb1rj_hATV1NQ3gA'
 let lat = '51.505';
 let lon = '-0.09';
 
-let mymap = L.map('map').setView([lat,lon], 13);
+myMap.setView([lat, lon], 13);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -60,4 +60,29 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     tileSize: 512,
     zoomOffset: -1,
     accessToken: `${mapboxToken}`
-}).addTo(mymap);
+}).addTo(myMap);
+
+function displayMap(lat, lon) {
+    myMap.setView([lat, lon], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: `${mapboxToken}`
+    }).addTo(myMap);
+}
+
+function displayInfo(data) {
+    const { ip, isp, location } = data;
+    const { city, country, region, postalCode, timezone, lat, lng } = location;
+
+
+    ipEl.innerText = ip;
+    locationEl.innerText = `${city}, ${country}, ${postalCode}`;
+    timezoneEl.innerText = `UTC ${timezone}`
+    ispEl.innerText = isp;
+    displayMap(lat, lng)
+}
+
