@@ -10,6 +10,8 @@
 
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
     </head>
@@ -26,7 +28,7 @@
             <section class="details">
                 <div class="detail">
                     <label class='detail__label'>IP Address</label>
-                    <p class="detail__info" id='ip'>192.212.174.191</p>
+                    <p class="detail__info" id='ip'>192.212.174.101</p>
                 </div>
                 <div class="detail">
                     <label class='detail__label'>Location</label>
@@ -43,13 +45,14 @@
             </section>
         </header>
 
-        <section class="map"></section>
+        <div class="map" id='map'></div>
 
         <!-- <div class="attribution">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
             Coded by <a href="#">Your Name Here</a>.
         </div> -->
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 
