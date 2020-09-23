@@ -18,6 +18,7 @@ const api = {
     key: 'at_Ms5M0n5CIXhBR7UQhqNIE2agBZEoa',
     proxy: 'https://cors-anywhere.herokuapp.com/',
     base: 'https://geo.ipify.org/api/v1',
+    
 }
 
 // Fetch IP data
