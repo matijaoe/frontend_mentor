@@ -8,6 +8,7 @@
 	--light-gray: hsl(0, 0%, 97%);
 	--light-grayish-blue: hsl(229, 8%, 92%);
 	--grayish-blue: hsl(229, 8%, 60%);
+	--gray: hsl(240, 6%, 74%);
 	--very-dark-blue: hsl(229, 31%, 21%);
 
 	--very-dark-blue-opaque: hsla(229, 31%, 21%, 0.2);
@@ -53,8 +54,7 @@ img {
 }
 
 .hide {
-	opacity: 0;
-	visibility: hidden;
+	display: none;
 }
 
 .row {
@@ -78,6 +78,10 @@ img {
 	margin: 0 auto;
 }
 
+p {
+	line-height: 1.5;
+}
+
 .title {
 	font-weight: 500;
 	line-height: 1;
@@ -88,7 +92,7 @@ img {
 	}
 
 	&--secondary {
-		font-size: 3.4rem;
+		font-size: 3rem;
 		text-align: center;
 		margin-bottom: 2.4rem;
 	}
@@ -358,7 +362,9 @@ section {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		border-bottom: 5px dotted var(--light-grayish-blue);
+		background: url('images/bg-dots.svg');
+		background-repeat: no-repeat;
+		background-position: bottom;
 	}
 
 	&__icon {
@@ -376,10 +382,73 @@ section {
 
 	&__footer {
 		display: flex;
-		padding: 2.4rem;
+		padding: 2rem;
 
 		> * {
 			flex: 1;
 		}
+	}
+}
+
+.faq {
+}
+
+.questions {
+	margin-top: 2rem;
+	max-width: 55rem;
+	margin: 4.8rem auto;
+	border-bottom: 2px solid var(--light-grayish-blue);
+}
+
+.question {
+	border-top: 2px solid var(--light-grayish-blue);
+	cursor: pointer;
+	transition: all 500ms ease;
+
+	&.opened {
+
+		.question__answer {
+			display: block;
+		}
+
+		.question__icon {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2rem 0;
+
+		&:hover .question__title {
+			color: var(--soft-red);
+		}
+	}
+
+	&__title {
+		flex: 1;
+		transition: all 250ms ease;
+	}
+
+	&__answer {
+		font-size: 1.5rem;
+		color: var(--grayish-blue);
+		line-height: 2;
+		padding: 1.4rem 0 2.4rem;
+		display: none;
+	}
+
+	&__icon {
+		margin-right: 1.6rem;
+		cursor: pointer;
+		background-image: url('images/icon-arrow.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		box-sizing: contain;
+		min-width: 18px;
+		min-height: 16px;
+		transition: all 500ms ease;
 	}
 }

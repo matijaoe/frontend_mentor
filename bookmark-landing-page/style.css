@@ -6,6 +6,7 @@
   --light-gray: hsl(0, 0%, 97%);
   --light-grayish-blue: hsl(229, 8%, 92%);
   --grayish-blue: hsl(229, 8%, 60%);
+  --gray: hsl(240, 6%, 74%);
   --very-dark-blue: hsl(229, 31%, 21%);
   --very-dark-blue-opaque: hsla(229, 31%, 21%, 0.2);
   --border-radius: 5px; }
@@ -41,8 +42,7 @@ img {
   max-width: 100%; }
 
 .hide {
-  opacity: 0;
-  visibility: hidden; }
+  display: none; }
 
 .row {
   max-width: 1200px;
@@ -58,6 +58,9 @@ img {
   text-align: center;
   margin: 0 auto; }
 
+p {
+  line-height: 1.5; }
+
 .title {
   font-weight: 500;
   line-height: 1; }
@@ -65,7 +68,7 @@ img {
     text-align-last: left;
     font-size: 4.8rem; }
   .title--secondary {
-    font-size: 3.4rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 2.4rem; }
   .title--tertiary {
@@ -247,7 +250,9 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 5px dotted var(--light-grayish-blue); }
+    background: url("images/bg-dots.svg");
+    background-repeat: no-repeat;
+    background-position: bottom; }
   .card__icon {
     margin-bottom: 2.4rem; }
   .card__title {
@@ -257,6 +262,47 @@ section {
     font-size: 1.4rem; }
   .card__footer {
     display: flex;
-    padding: 2.4rem; }
+    padding: 2rem; }
     .card__footer > * {
       flex: 1; }
+
+.questions {
+  margin-top: 2rem;
+  max-width: 55rem;
+  margin: 4.8rem auto;
+  border-bottom: 2px solid var(--light-grayish-blue); }
+
+.question {
+  border-top: 2px solid var(--light-grayish-blue);
+  cursor: pointer;
+  transition: all 500ms ease; }
+  .question.opened .question__answer {
+    display: block; }
+  .question.opened .question__icon {
+    transform: rotate(180deg); }
+  .question__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0; }
+    .question__header:hover .question__title {
+      color: var(--soft-red); }
+  .question__title {
+    flex: 1;
+    transition: all 250ms ease; }
+  .question__answer {
+    font-size: 1.5rem;
+    color: var(--grayish-blue);
+    line-height: 2;
+    padding: 1.4rem 0 2.4rem;
+    display: none; }
+  .question__icon {
+    margin-right: 1.6rem;
+    cursor: pointer;
+    background-image: url("images/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: contain;
+    min-width: 18px;
+    min-height: 16px;
+    transition: all 500ms ease; }
