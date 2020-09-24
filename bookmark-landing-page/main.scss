@@ -4,6 +4,7 @@
 	--soft-blue-opaque: hsla(231, 69%, 60%, 0.1);
 	--soft-blue-opaque-2: hsla(231, 69%, 60%, 0.05);
 	--soft-red: hsl(0, 94%, 66%);
+	--soft-green:hsl(123, 38%, 64%);
 	// NEUTRAL
 	--light-gray: hsl(0, 0%, 97%);
 	--light-grayish-blue: hsl(229, 8%, 92%);
@@ -545,7 +546,7 @@ section {
 			background: var(--soft-red);
 		}
 		&.success {
-			background: rgb(25, 196, 91);
+			background: var(--soft-green);
 		}
 
 		&.show {
@@ -575,7 +576,7 @@ section {
 			border-color: var(--soft-red);
 		}
 		&.correct {
-			border-color: rgb(25, 196, 91);
+			border-color: var(--soft-green);
 		}
 
 		&:focus {

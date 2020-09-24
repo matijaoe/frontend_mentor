@@ -3,6 +3,7 @@
   --soft-blue-opaque: hsla(231, 69%, 60%, 0.1);
   --soft-blue-opaque-2: hsla(231, 69%, 60%, 0.05);
   --soft-red: hsl(0, 94%, 66%);
+  --soft-green:hsl(123, 38%, 64%);
   --light-gray: hsl(0, 0%, 97%);
   --light-grayish-blue: hsl(229, 8%, 92%);
   --grayish-blue: hsl(229, 8%, 60%);
@@ -375,7 +376,7 @@ section {
     .form__state.error {
       background: var(--soft-red); }
     .form__state.success {
-      background: #19c45b; }
+      background: var(--soft-green); }
     .form__state.show {
       opacity: 1;
       visibility: visible; }
@@ -398,7 +399,7 @@ section {
       background-position: right 1.6rem center;
       border-color: var(--soft-red); }
     .form__email.correct {
-      border-color: #19c45b; }
+      border-color: var(--soft-green); }
     .form__email:focus {
       outline: none; }
     .form__email::placeholder {

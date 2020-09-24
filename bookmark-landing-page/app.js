@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
     if (!validateEmail(email)) {
         showEmailError(email);
     } else {
-        resetEmailForm()
+        showEmailSuccess()
     }
 
 });
@@ -32,12 +32,26 @@ function showEmailError(email) {
     document.querySelector('.form__state.success').classList.remove('show');
     emailInput.classList.add('wrong');
     emailInput.classList.remove('correct');
+    emailInput.focus();
+
+    emailInput.addEventListener('input', () => {
+        document.querySelector('.form__state.error').classList.remove('show');
+    });
+
 }
 
-function resetEmailForm() {
+function showEmailSuccess() {
     document.querySelector('.form__state.error').classList.remove('show');
     document.querySelector('.form__state.success').classList.add('show');
     emailInput.classList.remove('wrong');
     emailInput.classList.add('correct');
     emailInput.value = '';
+    emailInput.blur()
+
+    emailInput.addEventListener('focus', resetEmailForm);
+}
+
+function resetEmailForm() {
+    emailInput.classList.remove('correct');
+    document.querySelector('.form__state.success').classList.remove('show');
 }
