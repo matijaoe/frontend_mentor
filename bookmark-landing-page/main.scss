@@ -4,13 +4,14 @@
 	--soft-blue-opaque: hsla(231, 69%, 60%, 0.1);
 	--soft-red: hsl(0, 94%, 66%);
 	// NEUTRAL
-	--light-grayish-blue: hsl(229, 8%, 85%);
+	--light-gray: hsl(0, 0%, 97%);
+	--light-grayish-blue: hsl(229, 8%, 92%);
 	--grayish-blue: hsl(229, 8%, 60%);
 	--very-dark-blue: hsl(229, 31%, 21%);
 
 	--very-dark-blue-opaque: hsla(229, 31%, 21%, 0.2);
 
-	--border-radius: 6px;
+	--border-radius: 5px;
 }
 
 * {
@@ -137,20 +138,21 @@ img {
 }
 
 .btn {
+
 	font: inherit;
 	cursor: pointer;
 
-	padding: 0.85em 1.5em;
-	font-size: 1.4rem;
+	padding: 0.9em 1.6em;
+	font-size: 1.3rem;
 
 	background: var(--soft-blue);
 	color: white;
 	border: none;
 	border-radius: var(--border-radius);
 	border: 2px solid rgba(0, 0, 0, 0);
-	box-shadow: 0 0.6rem 0.8rem var(--soft-blue-opaque);
+	box-shadow: 0 6px 4px var(--soft-blue-opaque);
 
-	transition: all 250ms ease;
+	transition: all 250ms ease, transform 100ms ease-in-out;
 
 	&:hover {
 		background: white;
@@ -158,9 +160,15 @@ img {
 		border-color: currentColor;
 	}
 
+	&:active {
+		box-shadow: 0 3px 2px var(--soft-blue-opaque);
+		transform: scale(0.98);
+	}
+
 	&--cta {
+		font-size: 1.3rem;
 		background: var(--soft-red);
-		padding: 0.6em 2em;
+		padding: 0.85em 2.2em;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 
@@ -170,11 +178,10 @@ img {
 	}
 
 	&--secondary {
-		background: var(--light-grayish-blue);
+		background: var(--light-gray);
 		color: var(--very-dark-blue);
 
 		&:hover {
-			color: var(--light-grayish-blue);
 			color: var(--very-dark-blue);
 		}
 	}
@@ -189,8 +196,8 @@ section {
 .header {
 	// border: 5px solid lightpink;
 	position: relative;
-    overflow: hidden;
-    margin: 5rem 0 8rem;
+	overflow: hidden;
+	margin: 5rem 0 8rem;
 
 	&::after {
 		content: '';
@@ -265,8 +272,8 @@ section {
 			content: '';
 			position: absolute;
 			bottom: 0;
-			left: 0;
-			right: 0;
+			left: -1px;
+			right: 1px;
 			height: 1px;
 			transform: scaleY(2);
 			transform-origin: bottom;
