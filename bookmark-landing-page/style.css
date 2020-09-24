@@ -314,7 +314,6 @@ section {
     display: none; }
   .question__icon {
     margin-right: 1.6rem;
-    cursor: pointer;
     transition: transform 450ms cubic-bezier(0.38, 0.78, 0.53, 1.38);
     position: absolute;
     top: 0;
@@ -356,13 +355,12 @@ section {
     flex: 1;
     margin-right: 1.6rem;
     position: relative; }
-  .form__error {
+  .form__state {
     position: absolute;
     top: calc(100% - 15px);
     left: 0;
     right: 0;
     font-size: 1.2rem;
-    background: var(--soft-red);
     font-style: italic;
     text-align: left;
     border-bottom-left-radius: 5px;
@@ -370,7 +368,17 @@ section {
     padding-left: 1.6rem;
     padding-top: 5px;
     margin-top: 12px;
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms ease; }
+    .form__state.error {
+      background: var(--soft-red); }
+    .form__state.success {
+      background: #19c45b; }
+    .form__state.show {
+      opacity: 1;
+      visibility: visible; }
   .form__email {
     width: 100%;
     border-radius: 5px;
@@ -380,13 +388,17 @@ section {
     font-size: 1.4rem;
     padding: 1.2em 1.6em;
     position: relative;
-    z-index: 10; }
+    z-index: 10;
+    border: 3px solid transparent;
+    transition: border 250ms ease; }
     .form__email.wrong {
       padding-right: 4.6rem;
       background-image: url(images/icon-error.svg);
       background-repeat: no-repeat;
       background-position: right 1.6rem center;
-      border: 3px solid var(--soft-red); }
+      border-color: var(--soft-red); }
+    .form__email.correct {
+      border-color: #19c45b; }
     .form__email:focus {
       outline: none; }
     .form__email::placeholder {
