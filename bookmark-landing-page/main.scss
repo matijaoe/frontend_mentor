@@ -469,7 +469,7 @@ section {
 		// background-repeat: no-repeat;
 		// background-position: center;
 		// box-sizing: contain;
-		transition: all 400ms ease;
+		transition: transform 450ms cubic-bezier(.38,.78,.53,1.38);
 		position: absolute;
 		top: 0;
 		right: 0;
