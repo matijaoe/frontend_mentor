@@ -2,6 +2,7 @@
 	// PRIMARY
 	--soft-blue: hsl(231, 69%, 60%);
 	--soft-blue-opaque: hsla(231, 69%, 60%, 0.1);
+	--soft-blue-opaque-2: hsla(231, 69%, 60%, 0.05);
 	--soft-red: hsl(0, 94%, 66%);
 	// NEUTRAL
 	--light-gray: hsl(0, 0%, 97%);
@@ -72,6 +73,11 @@ img {
 	}
 }
 
+.center {
+	text-align: center;
+	margin: 0 auto;
+}
+
 .title {
 	font-weight: 500;
 	line-height: 1;
@@ -93,6 +99,7 @@ img {
 }
 
 .subtitle {
+	font-weight: 400;
 	color: var(--grayish-blue);
 	line-height: 1.5;
 	max-width: 48rem;
@@ -138,7 +145,6 @@ img {
 }
 
 .btn {
-
 	font: inherit;
 	cursor: pointer;
 
@@ -317,7 +323,63 @@ section {
 	}
 }
 
-.center {
-	text-align: center;
-	margin: 0 auto;
+.download {
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 26rem);
+		grid-template-rows: repeat(2, 3rem) 1fr repeat(2, 3rem);
+		column-gap: 3rem;
+		justify-content: center;
+		align-content: center;
+		margin: 4.8rem auto 0;
+	}
+}
+
+.card {
+	border-radius: 12px;
+	flex: 1;
+	background: white;
+	box-shadow: 0 1rem 1rem var(--soft-blue-opaque-2),
+		0 1.2rem 2rem var(--soft-blue-opaque);
+
+	&:nth-child(1) {
+		grid-row: 1 / span 3;
+	}
+	&:nth-child(2) {
+		grid-row: 2 / span 3;
+	}
+	&:nth-child(3) {
+		grid-row: 3 / span 3;
+	}
+
+	&__content {
+		padding: 4rem 3rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 5px dotted var(--light-grayish-blue);
+	}
+
+	&__icon {
+		margin-bottom: 2.4rem;
+	}
+
+	&__title {
+		font-weight: 500;
+		margin-bottom: 1.2rem;
+	}
+
+	&__version {
+		font-size: 1.4rem;
+	}
+
+	&__footer {
+		display: flex;
+		padding: 2.4rem;
+
+		> * {
+			flex: 1;
+		}
+	}
 }
