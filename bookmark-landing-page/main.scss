@@ -4,7 +4,7 @@
 	--soft-blue-opaque: hsla(231, 69%, 60%, 0.1);
 	--soft-blue-opaque-2: hsla(231, 69%, 60%, 0.05);
 	--soft-red: hsl(0, 94%, 66%);
-	--soft-green:hsl(123, 38%, 64%);
+	--soft-green: hsl(123, 49%, 70%);
 	// NEUTRAL
 	--light-gray: hsl(0, 0%, 97%);
 	--light-grayish-blue: hsl(229, 8%, 92%);
@@ -522,31 +522,39 @@ section {
 
 	&__state {
 		position: absolute;
-		top: calc(100% - 15px);
+		top: calc(100% - 10px);
 		left: 0;
 		right: 0;
 		font-size: 1.2rem;
-
 		font-style: italic;
 		text-align: left;
 
-		
-
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
-		padding-left: 1.6rem;
-		padding-top: 5px;
-		margin-top: 12px;
-		padding-bottom: 5px;
+		padding: 1.15rem 1.4rem .5rem 1.4rem;
+
 		opacity: 0;
 		visibility: hidden;
 		transition: all 250ms ease;
 
 		&.error {
 			background: var(--soft-red);
+
+			& + .form__email {
+				padding-right: 4.6rem;
+				background-image: url(images/icon-error.svg);
+				background-repeat: no-repeat;
+				background-position: right 1.6rem center;
+				border-color: var(--soft-red);
+			}
 		}
+
 		&.success {
 			background: var(--soft-green);
+
+			& + .form__email {
+				border-color: var(--soft-green);
+			}
 		}
 
 		&.show {
@@ -567,17 +575,6 @@ section {
 		z-index: 10;
 		border: 3px solid transparent;
 		transition: border 250ms ease;
-
-		&.wrong {
-			padding-right: 4.6rem;
-			background-image: url(images/icon-error.svg);
-			background-repeat: no-repeat;
-			background-position: right 1.6rem center;
-			border-color: var(--soft-red);
-		}
-		&.correct {
-			border-color: var(--soft-green);
-		}
 
 		&:focus {
 			outline: none;

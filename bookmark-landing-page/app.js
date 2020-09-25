@@ -1,7 +1,7 @@
 const form = document.querySelector('.form');
 const emailInput = document.querySelector('.form__email');
 const questions = document.querySelectorAll('.question');
-
+const stateEl = document.querySelector('.form__state');
 
 
 questions.forEach(question => {
@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let email = emailInput.value;
     if (!validateEmail(email)) {
-        showEmailError(email);
+        showEmailError();
     } else {
         showEmailSuccess()
     }
@@ -26,32 +26,48 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 
-function showEmailError(email) {
-    console.log('wrong email: ', email);
-    document.querySelector('.form__state.error').classList.add('show');
-    document.querySelector('.form__state.success').classList.remove('show');
-    emailInput.classList.add('wrong');
-    emailInput.classList.remove('correct');
+function showEmailError() {
+    resetEmailForm()
+    showErrorMsg();
     emailInput.focus();
 
-    emailInput.addEventListener('input', () => {
-        document.querySelector('.form__state.error').classList.remove('show');
-    });
-
+    // on input change, hide msg but leave the red border and error icon
+    emailInput.addEventListener('input', hideValidationMsg);
 }
 
 function showEmailSuccess() {
-    document.querySelector('.form__state.error').classList.remove('show');
-    document.querySelector('.form__state.success').classList.add('show');
-    emailInput.classList.remove('wrong');
-    emailInput.classList.add('correct');
+    resetEmailForm();
+    showSuccessMsg();
     emailInput.value = '';
-    emailInput.blur()
+    emailInput.blur();
 
-    emailInput.addEventListener('focus', resetEmailForm);
+    emailInput.addEventListener('input', hideValidationMsg);
+}
+
+function showErrorMsg() {
+    stateEl.classList.add('error');
+    showValidationMsg();
+    stateEl.innerText = `Whoops, make sure it's an email`;
+}
+
+function showSuccessMsg() {
+    stateEl.classList.add('success');
+    showValidationMsg();
+    stateEl.innerText = `Email submitted`;
+}
+
+function showValidationMsg() {
+    stateEl.classList.add('show');
+}
+
+function hideValidationMsg() {
+    stateEl.classList.remove('show');
 }
 
 function resetEmailForm() {
-    emailInput.classList.remove('correct');
-    document.querySelector('.form__state.success').classList.remove('show');
+    hideValidationMsg();
+    stateEl.classList.remove('success');
+    stateEl.classList.remove('error');
 }
+
+
