@@ -555,6 +555,13 @@ section {
     opacity: 0;
     visibility: hidden;
     transition: all 250ms ease; }
+    @media only screen and (max-width: 600px) {
+      .form__state {
+        top: -18px;
+        padding: 0.4rem 1.4rem 1.15rem 1.4rem;
+        border-radius: 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px; } }
     .form__state.error {
       background: var(--soft-red); }
       .form__state.error + .form__email {
@@ -588,7 +595,9 @@ section {
       color: var(--grayish-blue);
       opacity: 0.5; }
   .form__submit {
-    padding: 1.2em 1.6em; }
+    padding: 1.2em 1.6em;
+    position: relative;
+    z-index: 10; }
 
 .footer {
   background: var(--very-dark-blue);
