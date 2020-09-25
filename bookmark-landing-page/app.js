@@ -1,6 +1,11 @@
+// features
+const features = [...document.querySelectorAll('.feature')];
+const featureTab = [...document.querySelectorAll('.features__tab')];
+// faq
+const questions = document.querySelectorAll('.question');
+// Email validation
 const form = document.querySelector('.form');
 const emailInput = document.querySelector('.form__email');
-const questions = document.querySelectorAll('.question');
 const stateEl = document.querySelector('.form__state');
 
 
@@ -10,6 +15,25 @@ questions.forEach(question => {
     })
 });
 
+featureTab.forEach(featureLabel => {
+    featureLabel.addEventListener('click', () => {
+        // remove other active classes
+        performClassSwitcheroo(featureTab, featureLabel, 'active');
+        let featureId = featureLabel.dataset.feature;
+        let featureElement = document.getElementById(featureId);
+        performClassSwitcheroo(features, featureElement, 'show');
+    })
+})
+
+function performClassSwitcheroo(elements, target, className) {
+    elements.filter(elem => elem.classList.contains(className)).forEach(elem => elem.classList.remove(className));
+    target.classList.add(className);
+}
+
+function showFeature() {
+
+}
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let email = emailInput.value;
@@ -18,7 +42,6 @@ form.addEventListener('submit', (e) => {
     } else {
         showEmailSuccess()
     }
-
 });
 
 function validateEmail(email) {

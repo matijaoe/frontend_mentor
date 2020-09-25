@@ -61,12 +61,12 @@
                     Your bookmarks sync between your devices so you can access them on the go.
                 </p>
                 <nav class="features__tabs">
-                    <div class="features__tab active">Simple Bookmarking</div>
-                    <div class="features__tab">Speedy Searching</div>
-                    <div class="features__tab">Easy Sharing</div>
+                    <div class="features__tab active" data-feature='bookmarking'>Simple Bookmarking</div>
+                    <div class="features__tab" data-feature='searching'>Speedy Searching</div>
+                    <div class="features__tab" data-feature='sharing'>Easy Sharing</div>
                 </nav>
             </div>
-            <div class="feature" id="bookmarking">
+            <div class="feature show" id="bookmarking">
                 <div class="row feature__row">
                     <div class="feature__photo">
                         <img src="images/illustration-features-tab-1.svg" alt="Image">
@@ -76,6 +76,42 @@
                         <p class="subtitle">
                             Organize your bookmarks however you like. Our simple drag-and-drop interface
                             gives you complete control over how you manage your favourite sites.
+                        </p>
+                        <div class="feature__buttons">
+                            <button class=" btn">More info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature" id="searching">
+                <div class="row feature__row">
+                    <div class="feature__photo">
+                        <img src="images/illustration-features-tab-2.svg" alt="Image">
+                    </div>
+                    <div class="feature__text">
+                        <h2 class="title--tertiary">Search in an instant</h2>
+                        <p class="subtitle">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet animi consectetur
+                            qui odit incidunt voluptatum eaque veritatis, molestiae porro alias.
+                        </p>
+                        <div class="feature__buttons">
+                            <button class=" btn">More info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature" id="sharing">
+                <div class="row feature__row">
+                    <div class="feature__photo">
+                        <img src="images/illustration-features-tab-3.svg" alt="Image">
+                    </div>
+                    <div class="feature__text">
+                        <h2 class="title--tertiary">Sharing is caring</h2>
+                        <p class="subtitle">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam iusto,
+                            voluptatum maxime exercitationem eaque deserunt iste numquam, ut quaerat alias.
                         </p>
                         <div class="feature__buttons">
                             <button class=" btn">More info</button>
@@ -223,41 +259,40 @@
             </div>
         </section>
 
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="footer__row row">
                 <div class="footer__logo">
                     <img src="images/logo-bookmark-light.svg" alt="Logo">
                 </div>
                 <ul class="footer__nav">
                     <li class="footer__item">
-                        <a href="" class="footer__link link">Features</a>
+                        <a href="#footer" class="footer__link link">Features</a>
                     </li>
                     <li class="footer__item">
-                        <a href="" class="footer__link link">Pricing</a>
+                        <a href="#footer" class="footer__link link">Pricing</a>
                     </li>
                     <li class="footer__item">
-                        <a href="" class="footer__link link">Contact</a>
+                        <a href="#footer" class="footer__link link">Contact</a>
                     </li>
                 </ul>
                 <div class="footer__socials">
-                    <a href="#" class="footer__social link">
+                    <a href="#footer" class="footer__social link">
                         <box-icon name='facebook-square' type='logo' class="icon"></box-icon>
                     </a>
-                    <a href="#" class="footer__social link">
+                    <a href="#footer" class="footer__social link">
                         <box-icon name='twitter' type='logo' class="icon"></box-icon>
                     </a>
                 </div>
             </div>
+            <div class="attribution row">
+                <div>
+                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="link">Frontend Mentor</a>
+                </div>
+                <div>
+                    Coded by <a href="https://github.com/Mat2ja/frontend_mentor/tree/master/bookmark-landing-page" target="_blank" class="link">Matija Osrečki</a>
+                </div>
+            </div>
         </footer>
-
-
-
-        <!-- <footer>
-            <p class="attribution">
-                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-                Coded by <a href="#">Your Name Here</a>.
-            </p>
-        </footer> -->
 
         <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
         <script src="app.js"></script>
