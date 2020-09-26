@@ -60,6 +60,7 @@ body {
 	font-family: 'Rubik', sans-serif;
 	color: var(--very-dark-blue);
 	overflow-x: hidden;
+	width: 100vw;
 }
 
 a {
@@ -252,8 +253,6 @@ h5 {
 	padding-top: 4.2rem;
 	padding-bottom: 3.6rem;
 
-	//! hidden
-
 	&.hidden {
 		visibility: hidden;
 	}
@@ -317,6 +316,7 @@ h5 {
 	right: 0;
 	height: 100%;
 	max-height: 100vh;
+	overflow: hidden;
 	padding: 3.2rem;
 
 	background: var(--very-dark-blue-opaque-2);
