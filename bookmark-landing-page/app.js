@@ -5,6 +5,7 @@ const featureTab = [...document.querySelectorAll('.features__tab')];
 const questions = document.querySelectorAll('.question');
 // Email validation
 const form = document.querySelector('.form');
+const emailInputWrapper = document.querySelector('.form__input-wrapper');
 const emailInput = document.querySelector('.form__email');
 const stateEl = document.querySelector('.form__state');
 
@@ -101,20 +102,31 @@ function showErrorMsg() {
     stateEl.classList.add('error');
     showValidationMsg();
     stateEl.innerText = `Whoops, make sure it's an email`;
+
 }
 
 function showSuccessMsg() {
     stateEl.classList.add('success');
     showValidationMsg();
     stateEl.innerText = `Email submitted`;
+
+}
+function translateInputWrapper() {
+    if (stateEl.classList.contains('show')) {
+        emailInputWrapper.classList.add('translate-up');
+    } else {
+        emailInputWrapper.classList.remove('translate-up');
+    }
 }
 
 function showValidationMsg() {
     stateEl.classList.add('show');
+    translateInputWrapper()
 }
 
 function hideValidationMsg() {
     stateEl.classList.remove('show');
+    translateInputWrapper()
 }
 
 function resetEmailForm() {
