@@ -914,14 +914,6 @@ section {
 		visibility: hidden;
 		transition: all 250ms ease;
 
-		// @media only screen and (max-width: $sm) {
-		// 	top: -18px;
-		// 	padding: 0.4rem 1.4rem 1.15rem 1.4rem;
-		// 	border-radius: 0;
-		// 	border-top-left-radius: 5px;
-		// 	border-top-right-radius: 5px;
-		// }
-
 		&.error {
 			background: var(--soft-red);
 

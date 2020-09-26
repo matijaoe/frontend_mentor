@@ -10,9 +10,9 @@ const emailInput = document.querySelector('.form__email');
 const stateEl = document.querySelector('.form__state');
 
 const nav = document.querySelector('.nav');
-const navLink = document.querySelectorAll('.nav__link');
 const mobileIcon = document.querySelector('.nav__mobile-icon');
 const mobileMenu = document.querySelector('.mobile-nav');
+const mobileNavLink = document.querySelectorAll('.mobile-nav__link');
 const mobileExit = document.querySelector('.mobile-nav__exit');
 
 
@@ -24,46 +24,11 @@ questions.forEach(question => {
 
 featureTab.forEach(featureLabel => {
     featureLabel.addEventListener('click', () => {
-        // remove other active classes
         performClassSwitcheroo(featureTab, featureLabel, 'active');
-        let featureId = featureLabel.dataset.feature;
-        let featureElement = document.getElementById(featureId);
+        let featureElement = document.getElementById(featureLabel.dataset.feature);
         performClassSwitcheroo(features, featureElement, 'show');
     })
 })
-
-mobileIcon.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    nav.classList.toggle('hidden');
-    lockBodyScroll();
-})
-
-mobileExit.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    nav.classList.toggle('hidden');
-    lockBodyScroll();
-});
-
-navLink.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        nav.classList.remove('hidden');
-        lockBodyScroll();
-    })
-});
-
-function lockBodyScroll() {
-    if (!mobileMenu.classList.contains('hidden')) {
-        document.body.style.position = 'fixed';
-    } else {
-        document.body.style.position = 'relative';
-    }
-}
-
-function performClassSwitcheroo(elements, target, className) {
-    elements.filter(elem => elem.classList.contains(className)).forEach(elem => elem.classList.remove(className));
-    target.classList.add(className);
-}
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -74,6 +39,31 @@ form.addEventListener('submit', (e) => {
         showEmailSuccess()
     }
 });
+
+mobileIcon.addEventListener('click', toggleMobileMenu)
+mobileExit.addEventListener('click', toggleMobileMenu);
+mobileNavLink.forEach(link => link.addEventListener('click', toggleMobileMenu));
+
+function toggleMobileMenu() {
+    mobileMenu.classList.toggle('hidden');
+    nav.classList.toggle('hidden');
+    lockBodyScroll();
+}
+
+function lockBodyScroll() {
+    if (!mobileMenu.classList.contains('hidden')) {
+        document.body.style.position = 'fixed';
+    } else {
+        document.body.style.position = 'relative';
+    }
+}
+
+function performClassSwitcheroo(elements, target, className) {
+    elements
+        .filter(elem => elem.classList.contains(className))
+        .forEach(elem => elem.classList.remove(className));
+    target.classList.add(className);
+}
 
 function validateEmail(email) {
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
@@ -102,15 +92,14 @@ function showErrorMsg() {
     stateEl.classList.add('error');
     showValidationMsg();
     stateEl.innerText = `Whoops, make sure it's an email`;
-
 }
 
 function showSuccessMsg() {
     stateEl.classList.add('success');
     showValidationMsg();
     stateEl.innerText = `Email submitted`;
-
 }
+
 function translateInputWrapper() {
     if (stateEl.classList.contains('show')) {
         emailInputWrapper.classList.add('translate-up');
@@ -121,12 +110,12 @@ function translateInputWrapper() {
 
 function showValidationMsg() {
     stateEl.classList.add('show');
-    translateInputWrapper()
+    translateInputWrapper();
 }
 
 function hideValidationMsg() {
     stateEl.classList.remove('show');
-    translateInputWrapper()
+    translateInputWrapper();
 }
 
 function resetEmailForm() {
