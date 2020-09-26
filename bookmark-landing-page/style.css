@@ -207,11 +207,7 @@ h5 {
     padding: 0.25em;
     margin-right: -0.25em;
     cursor: pointer;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 1rem; }
-    .nav__mobile-icon.open .nav__list {
-      display: flex; }
+    display: none; }
     @media only screen and (max-width: 750px) {
       .nav__mobile-icon {
         display: block; } }

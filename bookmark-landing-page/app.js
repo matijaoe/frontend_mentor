@@ -12,6 +12,7 @@ const nav = document.querySelector('.nav');
 const navLink = document.querySelectorAll('.nav__link');
 const mobileIcon = document.querySelector('.nav__mobile-icon');
 const mobileMenu = document.querySelector('.mobile-nav');
+const mobileExit = document.querySelector('.mobile-nav__exit');
 
 
 questions.forEach(question => {
@@ -31,24 +32,32 @@ featureTab.forEach(featureLabel => {
 })
 
 mobileIcon.addEventListener('click', () => {
-    mobileIcon.classList.toggle('open');
     mobileMenu.classList.toggle('hidden');
     nav.classList.toggle('hidden');
+    lockBodyScroll();
 })
 
-document.querySelector('.mobile-nav__exit').addEventListener('click', () => {
-    mobileIcon.classList.toggle('open');
+mobileExit.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     nav.classList.toggle('hidden');
+    lockBodyScroll();
 });
 
 navLink.forEach(link => {
     link.addEventListener('click', () => {
-        mobileIcon.classList.remove('open');
         mobileMenu.classList.add('hidden');
         nav.classList.remove('hidden');
+        lockBodyScroll();
     })
 });
+
+function lockBodyScroll() {
+    if (!mobileMenu.classList.contains('hidden')) {
+        document.body.style.position = 'fixed';
+    } else {
+        document.body.style.position = 'relative';
+    }
+}
 
 function performClassSwitcheroo(elements, target, className) {
     elements.filter(elem => elem.classList.contains(className)).forEach(elem => elem.classList.remove(className));

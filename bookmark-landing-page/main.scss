@@ -298,16 +298,7 @@ h5 {
 		padding: 0.25em;
 		margin-right: -0.25em;
 		cursor: pointer;
-
-		position: -webkit-sticky;
-		position: sticky;
-		top: 1rem;
-
-		&.open {
-			.nav__list {
-				display: flex;
-			}
-		}
+		display: none;
 
 		@media only screen and (max-width: $md) {
 			display: block;
@@ -341,6 +332,7 @@ h5 {
 	visibility: visible;
 
 	transition: all 400ms ease;
+
 
 	&.hidden {
 		visibility: hidden;
