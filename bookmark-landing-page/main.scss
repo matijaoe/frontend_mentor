@@ -15,9 +15,10 @@ $xs: 400px;
 	--light-gray: hsl(0, 0%, 97%);
 	--light-grayish-blue: hsl(229, 8%, 92%);
 	--grayish-blue: hsl(229, 8%, 60%);
-	--very-dark-blue: hsl(229, 31%, 21%);
+	--very-dark-blue: rgb(37, 43, 70);
 
 	--very-dark-blue-opaque: hsla(229, 31%, 21%, 0.2);
+	--very-dark-blue-opaque-2: hsla(229, 31%, 21%, 0.94);
 
 	--border-radius: 5px;
 }
@@ -38,10 +39,20 @@ html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 	scrollbar-width: thin;
+	-webkit-tap-highlight-color: transparent;
 
 	@media only screen and (max-width: $md) {
 		font-size: 56.25%;
 	}
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	// background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	// background: var(--border-color);
 }
 
 body {
@@ -117,10 +128,10 @@ h5 {
 		}
 
 		@media only screen and (max-width: $md) {
-			font-size: 3.4rem;
+			font-size: 3.6rem;
 		}
 		@media only screen and (max-width: $sm) {
-			font-size: 2.8rem;
+			font-size: 3rem;
 		}
 	}
 
@@ -220,14 +231,34 @@ h5 {
 			color: var(--very-dark-blue);
 		}
 	}
+
+	&--outline {
+		background: transparent;
+		color: white;
+		border-color: currentColor;
+		font-size: inherit;
+		padding: 0.8em;
+
+		&:hover {
+			background: white;
+			color: var(--very-dark-blue);
+			border-color: white;
+		}
+	}
 }
 
 .nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-top: 4.8rem;
+	padding-top: 4.2rem;
 	padding-bottom: 3.6rem;
+
+	//! hidden
+
+	&.hidden {
+		visibility: hidden;
+	}
 
 	&__logo {
 		flex-shrink: 0;
@@ -235,25 +266,9 @@ h5 {
 		align-items: center;
 	}
 
-	&__mobile {
-		display: none;
-		padding: 0.25em;
-		margin-right: -0.25em;
-		cursor: pointer;
-
-		@media only screen and (max-width: $md) {
-			display: block;
-		}
-
-		.icon {
-			display: block;
-		}
-	}
-
 	&__list {
 		display: flex;
 		align-items: center;
-		text-transform: uppercase;
 		font-size: 1.3rem;
 
 		@media only screen and (max-width: $md) {
@@ -263,6 +278,8 @@ h5 {
 
 	&__item {
 		margin: 0 2rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
 
 		&:last-child {
 			margin-left: 2rem;
@@ -271,11 +288,129 @@ h5 {
 
 	&__link {
 		padding: 0.4em 0.6em;
-		letter-spacing: 0.08em;
 	}
 
 	&__login {
 		padding: 0.85em 2.2em;
+	}
+
+	&__mobile-icon {
+		padding: 0.25em;
+		margin-right: -0.25em;
+		cursor: pointer;
+
+		position: -webkit-sticky;
+		position: sticky;
+		top: 1rem;
+
+		&.open {
+			.nav__list {
+				display: flex;
+			}
+		}
+
+		@media only screen and (max-width: $md) {
+			display: block;
+		}
+
+		.icon {
+			display: block;
+			height: 4rem;
+			width: 4rem;
+		}
+	}
+}
+
+.mobile-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	min-height: 100vh;
+	padding: 3.2rem;
+
+	background: var(--very-dark-blue-opaque-2);
+	color: white;
+	fill: white;
+	z-index: 100;
+
+	display: flex;
+	flex-direction: column;
+
+	opacity: 1;
+	visibility: visible;
+
+	transition: all 400ms ease;
+
+	&.hidden {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 3.6rem;
+	}
+
+	&__exit {
+		cursor: pointer;
+		padding: 0.25em;
+		margin-right: -0.25em;
+		.icon {
+			display: block;
+			height: 4rem;
+			width: 4rem;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+		text-align: center;
+		border-top: 1px solid var(--grayish-blue);
+	}
+
+	&__item {
+		margin: 0;
+		display: flex;
+		justify-content: center;
+
+		&:last-child {
+			margin-left: 0;
+		}
+	}
+
+	&__link {
+		padding: 1em;
+		flex: 1;
+		border-bottom: 1px solid var(--grayish-blue);
+	}
+
+	&__btn {
+		width: 100%;
+		margin-top: 3rem;
+	}
+
+	&__footer {
+		margin-top: auto;
+		display: flex;
+		justify-content: center;
+
+		.icon {
+			display: block;
+			width: 4rem;
+			height: 4rem;
+		}
+	}
+	&__social {
+		fill: white;
+		&:not(:last-child) {
+			margin-right: 3.6rem;
+		}
 	}
 }
 
@@ -288,7 +423,6 @@ section {
 .header {
 	// border: 5px solid lightpink;
 	position: relative;
-	overflow: hidden;
 	margin: 5rem 0 8rem;
 
 	@media only screen and (max-width: $sm) {
@@ -340,7 +474,7 @@ section {
 
 	&__buttons {
 		> * {
-			margin-right: 0.8rem;
+			margin-right: 1rem;
 		}
 
 		@media only screen and (max-width: $xs) {
@@ -348,7 +482,7 @@ section {
 			flex-direction: column;
 
 			> *:not(:last-child) {
-				margin-bottom: 0.8rem;
+				margin-bottom: 1rem;
 			}
 		}
 	}
@@ -388,7 +522,7 @@ section {
 		text-align: center;
 		width: max-content;
 
-		margin: 4.8rem auto 5.4rem;
+		margin: 4.8rem auto 1rem;
 
 		@media only screen and (max-width: $md) {
 			width: 100%;
@@ -501,7 +635,8 @@ section {
 	}
 
 	&__photo {
-		padding-bottom: 8rem;
+		padding-top: 6rem;
+		padding-bottom: 6rem;
 
 		@media only screen and (max-width: $md) {
 			position: relative;

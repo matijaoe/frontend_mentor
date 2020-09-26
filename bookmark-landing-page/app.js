@@ -8,6 +8,11 @@ const form = document.querySelector('.form');
 const emailInput = document.querySelector('.form__email');
 const stateEl = document.querySelector('.form__state');
 
+const nav = document.querySelector('.nav');
+const navLink = document.querySelectorAll('.nav__link');
+const mobileIcon = document.querySelector('.nav__mobile-icon');
+const mobileMenu = document.querySelector('.mobile-nav');
+
 
 questions.forEach(question => {
     question.addEventListener('click', () => {
@@ -25,13 +30,29 @@ featureTab.forEach(featureLabel => {
     })
 })
 
+mobileIcon.addEventListener('click', () => {
+    mobileIcon.classList.toggle('open');
+    mobileMenu.classList.toggle('hidden');
+    nav.classList.toggle('hidden');
+})
+
+document.querySelector('.mobile-nav__exit').addEventListener('click', () => {
+    mobileIcon.classList.toggle('open');
+    mobileMenu.classList.toggle('hidden');
+    nav.classList.toggle('hidden');
+});
+
+navLink.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileIcon.classList.remove('open');
+        mobileMenu.classList.add('hidden');
+        nav.classList.remove('hidden');
+    })
+});
+
 function performClassSwitcheroo(elements, target, className) {
     elements.filter(elem => elem.classList.contains(className)).forEach(elem => elem.classList.remove(className));
     target.classList.add(className);
-}
-
-function showFeature() {
-
 }
 
 form.addEventListener('submit', (e) => {
