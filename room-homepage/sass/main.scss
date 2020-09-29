@@ -146,7 +146,7 @@ img {
 	color: var(--text);
 
 	&--primary {
-		font-size: 4rem;
+		font-size: 3.95rem;
 
 		@media only screen and(max-width:1440px) {
 			font-size: 3.6rem;
@@ -178,6 +178,7 @@ img {
 	line-height: 1.6;
 	color: var(--text-2);
 	max-width: 40em;
+	font-weight: 500;
 }
 
 button {
@@ -466,7 +467,7 @@ button {
 
 	&__content {
 		position: relative;
-		padding: 7rem;
+		padding: 9rem;
 		padding-bottom: 10rem;
 		flex: 1;
 		gap: 2.4rem;
