@@ -34,6 +34,7 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+	-webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -501,11 +502,20 @@ button {
 		@media only screen and(max-width:1200px) {
 			flex-basis: 50%;
 		}
+		@media only screen and(max-width:450px) {
+			flex-basis: 100%;
+		}
 
 		img {
 			object-fit: cover;
 			height: 100%;
 			width: 100%;
+		}
+
+		&--2 {
+			@media only screen and(max-width:450px) {
+				order: 2;
+			}
 		}
 	}
 }
