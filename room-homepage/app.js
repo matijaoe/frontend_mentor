@@ -14,7 +14,8 @@ controls.forEach(control => {
 })
 window.addEventListener('keyup', changePanel);
 
-function changePanel(e)    console.log(e.target.parentNode.id);
+function changePanel(e) {
+    console.log(e.target.parentNode.id);
     if (e.target.id === 'back' || e.target.parentNode.id === 'back' || e.keyCode === 37) {
         console.log(currentIdx);
         if (currentIdx - 1 < 0) {
