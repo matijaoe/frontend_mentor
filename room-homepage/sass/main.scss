@@ -14,6 +14,11 @@ html {
 	font-size: 62.5%;
 }
 
+::selection {
+	background: var(--black);
+	color: var(--white);
+}
+
 .hero-1 {
 	transition: background 500ms ease;
 	background: url('../images/desktop-image-hero-1.jpg');
@@ -60,8 +65,16 @@ body {
 }
 
 img {
+	user-select: none;
 	display: block;
 	max-width: 100%;
+	transition: all 550ms ease;
+	transform: scale(1.02);
+
+	&:hover {
+		transform: scale(1.1);
+		filter: saturate(175%);
+	}
 }
 
 .title {
@@ -170,6 +183,7 @@ button {
 	left: 5rem;
 	display: flex;
 	align-items: center;
+	z-index: 100;
 
 	&__logo {
 		margin-right: 4.8rem;
@@ -217,8 +231,14 @@ button {
 .hero {
 	position: relative;
 	&__photo {
+		overflow: hidden;
 	}
-
+	.title,
+	.text,
+	.btn {
+		opacity: 0;
+		transition: all 1s ease 1s;
+	}
 	&__content {
 		position: relative;
 		padding: 7rem;
@@ -234,6 +254,13 @@ button {
 			opacity: 1;
 			display: grid;
 			grid-template-columns: auto 1fr;
+
+			.title,
+			.text,
+			.btn {
+				opacity: 1;
+				transition: all 1s ease 1s;
+			}
 		}
 	}
 
@@ -250,7 +277,7 @@ button {
 		padding: 5.2rem;
 	}
 
-	&__photo--1 {
-		background: pink;
+	&__photo {
+		overflow: hidden;
 	}
 }

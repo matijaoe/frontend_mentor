@@ -11,6 +11,10 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; }
 
+::selection {
+  background: var(--black);
+  color: var(--white); }
+
 .hero-1 {
   transition: background 500ms ease;
   background: url("../images/desktop-image-hero-1.jpg");
@@ -50,8 +54,14 @@ body {
   backdrop-filter: blur(50px); }
 
 img {
+  user-select: none;
   display: block;
-  max-width: 100%; }
+  max-width: 100%;
+  transition: all 550ms ease;
+  transform: scale(1.02); }
+  img:hover {
+    transform: scale(1.1);
+    filter: saturate(175%); }
 
 .title {
   font-weight: 600;
@@ -132,7 +142,8 @@ button {
   top: 5rem;
   left: 5rem;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  z-index: 100; }
   .nav__logo {
     margin-right: 4.8rem; }
   .nav__list {
@@ -165,6 +176,13 @@ button {
 
 .hero {
   position: relative; }
+  .hero__photo {
+    overflow: hidden; }
+  .hero .title,
+  .hero .text,
+  .hero .btn {
+    opacity: 0;
+    transition: all 1s ease 1s; }
   .hero__content {
     position: relative;
     padding: 7rem;
@@ -177,6 +195,11 @@ button {
       opacity: 1;
       display: grid;
       grid-template-columns: auto 1fr; }
+      .hero__panel.show .title,
+      .hero__panel.show .text,
+      .hero__panel.show .btn {
+        opacity: 1;
+        transition: all 1s ease 1s; }
   .hero__btn {
     margin-top: 3em; }
 
@@ -185,5 +208,5 @@ button {
   grid-template-columns: auto 1fr auto; }
   .about__content {
     padding: 5.2rem; }
-  .about__photo--1 {
-    background: pink; }
+  .about__photo {
+    overflow: hidden; }

@@ -14,15 +14,17 @@ controls.forEach(control => {
 })
 window.addEventListener('keyup', changePanel);
 
-function changePanel(e) {
-    if (e.target.id === 'back' || e.keyCode === 37) {
+function changePanel(e)    console.log(e.target.parentNode.id);
+    if (e.target.id === 'back' || e.target.parentNode.id === 'back' || e.keyCode === 37) {
+        console.log(currentIdx);
         if (currentIdx - 1 < 0) {
             currentIdx = photos.length - 1;
         } else {
             --currentIdx;
         }
 
-    } else if (e.target.id === 'forward' || e.keyCode === 39) {
+    } else if (e.target.id === 'forward' || e.target.parentNode.id === 'forward' || e.keyCode === 39) {
+        console.log(currentIdx);
         if (currentIdx + 1 >= photos.length) {
             currentIdx = 0;
         } else {
