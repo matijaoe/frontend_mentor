@@ -7,16 +7,20 @@
 
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-        <title>Frontend Mentor | Room homepage</title>
+        <title>Room homepage</title>
 
         <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
         <link rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     </head>
 
     <body class="hero-1">
         <div class="app">
             <div class="nav">
+                <div class="nav__menu-icon">
+                    <box-icon name='menu' class="icon"></box-icon>
+                </div>
                 <div class="nav__logo">
                     <img src="images/logo.svg" alt="Logo">
                 </div>
@@ -34,6 +38,10 @@
                         <a href="#" class="nav__link">Contact</a>
                     </li>
                 </ul>
+                <button class="" id="theme-toggle">
+                    <box-icon type='solid' name='sun' class="icon" id="sun"></box-icon>
+                    <box-icon type='solid' name='moon' class="icon hide" id="moon"></box-icon>
+                </button>
             </div>
             <section class="hero">
                 <div class="hero__panel hero__panel--1 show">
@@ -153,12 +161,18 @@
             </section>
         </div>
 
+        <footer class="footer">
+            <div class="attribution">
+                <div>
+                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" id="mentor">Frontend Mentor</a>
+                </div>
+                <div>
+                    Coded by <a href="https://github.com/Mat2ja/frontend_mentor/tree/master/room-homepage" id="me">Matija Osrecki</a>
+                </div>
+            </div>
+        </footer>
 
-        <!-- 
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-            Coded by <a href="#">Your Name Here</a>.
-        </div> -->
+        <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
         <script src="app.js"></script>
     </body>
 
