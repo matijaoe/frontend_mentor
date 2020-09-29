@@ -1,6 +1,6 @@
 const controls = document.querySelectorAll('.control');
 const heroImg = document.querySelector('.hero__photo img');
-const heroContent = document.querySelectorAll('.hero__content > div');
+const heroPanels = document.querySelectorAll('.hero__panel');
 
 let photos = [
     'images/desktop-image-hero-1.jpg',
@@ -10,12 +10,11 @@ let photos = [
 let currentIdx = 0;
 
 controls.forEach(control => {
-    control.addEventListener('click', changePicture)
+    control.addEventListener('click', changePanel)
 })
-window.addEventListener('keyup', changePicture);
+window.addEventListener('keyup', changePanel);
 
-function changePicture(e) {
-    console.log(e);
+function changePanel(e) {
     if (e.target.id === 'back' || e.keyCode === 37) {
         if (currentIdx - 1 < 0) {
             currentIdx = photos.length - 1;
@@ -31,7 +30,8 @@ function changePicture(e) {
         }
     }
 
-    heroImg.src = photos[currentIdx];
-    document.body.className = '';
+    document.body.classList.remove('hero-1', 'hero-2', 'hero-3');
     document.body.classList.add(`hero-${currentIdx + 1}`);
+    heroPanels.forEach(panel => !panel.classList.contains('show') || panel.classList.remove('show'));
+    heroPanels[currentIdx].classList.add('show');
 }

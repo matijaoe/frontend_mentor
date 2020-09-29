@@ -56,7 +56,7 @@ body {
 	--very-dark-gray: hsl(0, 0%, 27%);
 	background: var(--black);
 
-	backdrop-filter: blur(30px);
+	backdrop-filter: blur(50px);
 }
 
 img {
@@ -215,9 +215,7 @@ button {
 }
 
 .hero {
-	display: grid;
-	grid-template-columns: auto 1fr;
-
+	position: relative;
 	&__photo {
 	}
 
@@ -225,18 +223,17 @@ button {
 		position: relative;
 		padding: 7rem;
 		padding-bottom: 10rem;
+	}
 
-		.hero__panel {
+	&__panel {
+		transition: all 2500ms;
+		opacity: 0;
+		display: none;
+
+		&.show {
 			opacity: 1;
-			visibility: visible;
-            transition: all 250ms;
-            display: block;
-
-			&.hide {
-				opacity: 0;
-                visibility: hidden;
-                display: none;
-			}
+			display: grid;
+			grid-template-columns: auto 1fr;
 		}
 	}
 

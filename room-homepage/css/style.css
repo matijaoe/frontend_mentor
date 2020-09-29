@@ -47,7 +47,7 @@ body {
   --white: #ffffff;
   --very-dark-gray: hsl(0, 0%, 27%);
   background: var(--black);
-  backdrop-filter: blur(30px); }
+  backdrop-filter: blur(50px); }
 
 img {
   display: block;
@@ -164,21 +164,19 @@ button {
       transform-origin: left; }
 
 .hero {
-  display: grid;
-  grid-template-columns: auto 1fr; }
+  position: relative; }
   .hero__content {
     position: relative;
     padding: 7rem;
     padding-bottom: 10rem; }
-    .hero__content .hero__panel {
+  .hero__panel {
+    transition: all 2500ms;
+    opacity: 0;
+    display: none; }
+    .hero__panel.show {
       opacity: 1;
-      visibility: visible;
-      transition: all 250ms;
-      display: block; }
-      .hero__content .hero__panel.hide {
-        opacity: 0;
-        visibility: hidden;
-        display: none; }
+      display: grid;
+      grid-template-columns: auto 1fr; }
   .hero__btn {
     margin-top: 3em; }
 
