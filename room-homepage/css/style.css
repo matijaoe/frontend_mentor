@@ -274,8 +274,7 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 99; }
 
 .show-mobile .footer {
@@ -387,25 +386,25 @@ button {
       flex-direction: column; } }
   .hero__photo {
     overflow: hidden;
-    width: 70%;
+    flex-basis: 70%;
     max-width: 840px; }
     @media only screen and (max-width: 1200px) {
       .hero__photo {
         flex-basis: 50%; } }
     @media only screen and (max-width: 840px) {
       .hero__photo {
-        width: 100%; } }
+        flex-basis: 100%; } }
     .hero__photo img {
       object-fit: cover;
       height: 100%;
       width: 100%; }
   .hero__content {
+    flex: 1;
     position: relative;
     padding: 9rem;
     padding-bottom: 10rem;
-    flex: 1;
     gap: 2.4rem;
-    min-width: 460px; }
+    min-width: 500px; }
     @media only screen and (max-width: 1440px) {
       .hero__content {
         padding: 6rem;
@@ -416,12 +415,17 @@ button {
         flex-basis: 50%;
         min-width: 300px;
         /* random value */
-        height: 420px; } }
+        min-height: 420px; } }
     @media only screen and (max-width: 650px) {
       .hero__content {
-        padding: 6rem 3.6rem 5rem; }
+        padding: 6rem 3.6rem 5rem;
+        min-height: 385px; }
         .hero__content .btn {
           margin-top: 1rem; } }
+    @media only screen and (max-width: 450px) {
+      .hero__content {
+        padding: 5rem 3.6rem 4rem;
+        min-height: 390px; } }
   .hero__panel {
     transition: all 300ms;
     opacity: 0;
