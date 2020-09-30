@@ -50,6 +50,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+  @media only screen and (max-width: 1440px) {
+    body {
+      justify-content: flex-start; } }
   body.hero-1 {
     background-image: url("../images/desktop-image-hero-1.jpg"); }
   body.hero-2 {
@@ -68,14 +71,21 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  max-height: 800px;
-  max-width: 1440px;
-  background: var(--bg);
-  position: relative; }
+  overflow: hidden; }
   @media only screen and (max-width: 1440px) {
     .app {
-      max-height: none; } }
+      flex: 1; } }
+  .app .main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 800px;
+    max-width: 1440px;
+    background: var(--bg);
+    position: relative; }
+    @media only screen and (max-width: 1440px) {
+      .app .main {
+        max-height: none; } }
 
 img {
   user-select: none;
@@ -231,9 +241,10 @@ button {
 
 .mobile-nav {
   background: var(--bg);
-  transform: translateX(-110%);
+  transform: translateY(-110%);
   transition: all 500ms ease;
-  opacity: 0.4; }
+  opacity: 0.4;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08); }
   .mobile-nav .nav__list {
     display: flex;
     font-weight: 600; }
@@ -249,8 +260,29 @@ button {
     .mobile-nav .nav__close-menu .icon {
       fill: var(--text); }
 
+.show-mobile .app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.show-mobile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 99; }
+
+.show-mobile .footer {
+  display: none; }
+
 .show-mobile .mobile-nav {
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1; }
 
 #theme-toggle {

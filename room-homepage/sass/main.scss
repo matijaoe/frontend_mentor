@@ -64,6 +64,10 @@ body {
 	background-size: cover;
 	background-position: center;
 
+	@media only screen and(max-width:1440px) {
+		justify-content: flex-start;
+	}
+
 	&.hero-1 {
 		background-image: url('../images/desktop-image-hero-1.jpg');
 	}
@@ -98,14 +102,24 @@ body {
 	flex-direction: column;
 	overflow: hidden;
 
-	max-height: 800px;
-	max-width: 1440px;
-
-	background: var(--bg);
-	position: relative;
-
 	@media only screen and(max-width:1440px) {
-		max-height: none;
+		flex: 1;
+	}
+
+	.main {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		max-height: 800px;
+		max-width: 1440px;
+
+		background: var(--bg);
+		position: relative;
+
+		@media only screen and(max-width:1440px) {
+			max-height: none;
+		}
 	}
 }
 
@@ -317,9 +331,10 @@ button {
 
 .mobile-nav {
 	background: var(--bg);
-	transform: translateX(-110%);
+	transform: translateY(-110%);
 	transition: all 500ms ease;
 	opacity: 0.4;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
 
 	.nav__list {
 		display: flex;
@@ -348,8 +363,32 @@ button {
 }
 
 .show-mobile {
+	.app {
+		// no scrollbar
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.6);
+		backdrop-filter: blur(2px);
+		z-index: 99;
+	}
+
+	.footer {
+		display: none;
+	}
 	.mobile-nav {
-		transform: translateX(0);
+		transform: translateY(0);
 		opacity: 1;
 	}
 }
