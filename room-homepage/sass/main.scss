@@ -327,7 +327,7 @@ button {
 	background: var(--bg);
 	transform: translateX(-100%);
 	transition: all 450ms ease;
-	opacity: .4;
+	opacity: 0.4;
 
 	.nav__list {
 		display: flex;
@@ -343,6 +343,10 @@ button {
 
 		position: relative;
 		top: 1px;
+
+		.icon {
+			fill: var(--text);
+		}
 	}
 }
 
@@ -386,6 +390,20 @@ button {
 
 		&.hide {
 			display: none;
+		}
+	}
+
+	#sun {
+		transition: all 250ms ease;
+		&:hover {
+			fill: #f7e543;
+		}
+	}
+
+	#moon {
+		transition: all 250ms ease;
+		&:hover {
+			fill: #f39006;
 		}
 	}
 }
@@ -651,7 +669,7 @@ button {
 		font-weight: 600;
 
 		&#mentor {
-			background: linear-gradient(90deg, #f1cb68, #f39006);
+			background: linear-gradient(90deg, #f7e543, #f39006);
 			color: transparent;
 			-webkit-background-clip: text;
 
@@ -661,7 +679,7 @@ button {
 		}
 
 		&#me {
-			background: linear-gradient(-90deg, #f1cb68, #f39006);
+			background: linear-gradient(-90deg, #f7e543, #f39006);
 			color: transparent;
 			-webkit-background-clip: text;
 
@@ -670,7 +688,7 @@ button {
 			}
 
 			@media only screen and(max-width:650px) {
-				background: linear-gradient(90deg, #f1cb68, #f39006);
+				background: linear-gradient(90deg, #f7e543, #f39006);
 				color: transparent;
 				-webkit-background-clip: text;
 			}

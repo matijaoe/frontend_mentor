@@ -55,10 +55,10 @@ function changePanel(e) {
 function changeTheme() {
     if (document.body.classList.contains('dark')) {
         document.body.classList.remove('dark');
-        toggle.innerHTML = `<box-icon type='solid' name='sun' class="icon" id="sun"></box-icon>`
+        toggle.innerHTML = `<box-icon name='sun' class="icon" id="sun"></box-icon>`
     } else {
         document.body.classList.add('dark');
-        toggle.innerHTML = `<box-icon type='solid' name='moon' class="icon" id="moon"></box-icon>`
+        toggle.innerHTML = `<box-icon name='moon' class="icon" id="moon"></box-icon>`
     }
 }
 
