@@ -6,6 +6,7 @@ const nav = document.querySelector('.nav');
 const mobileNav = document.querySelector('.mobile-nav');
 const openMenu = document.querySelector('.nav__open-menu');
 const closeMenu = document.querySelector('.nav__close-menu');
+const body = document.body;
 
 let photos = [
     'images/desktop-image-hero-1.jpg',
@@ -25,7 +26,7 @@ openMenu.addEventListener('click', toggleMenu)
 closeMenu.addEventListener('click', toggleMenu)
 
 function toggleMenu() {
-    mobileNav.classList.toggle('show');
+    body.classList.toggle('show-mobile');
 }
 
 function changePanel(e) {
@@ -46,24 +47,24 @@ function changePanel(e) {
         }
     }
 
-    document.body.classList.remove('hero-1', 'hero-2', 'hero-3');
-    document.body.classList.add(`hero-${currentIdx + 1}`);
+    body.classList.remove('hero-1', 'hero-2', 'hero-3');
+    body.classList.add(`hero-${currentIdx + 1}`);
     heroPanels.forEach(panel => !panel.classList.contains('show') || panel.classList.remove('show'));
     heroPanels[currentIdx].classList.add('show');
 }
 
 function changeTheme() {
-    if (document.body.classList.contains('dark')) {
-        document.body.classList.remove('dark');
+    if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
         toggle.innerHTML = `<box-icon name='sun' class="icon" id="sun"></box-icon>`
     } else {
-        document.body.classList.add('dark');
+        body.classList.add('dark');
         toggle.innerHTML = `<box-icon name='moon' class="icon" id="moon"></box-icon>`
     }
 }
 
 window.addEventListener('resize', () => {
     if (window.innerWidth > 650) {
-        mobileNav.classList.remove('show');
+        body.classList.remove('show-mobile');
     }
 })

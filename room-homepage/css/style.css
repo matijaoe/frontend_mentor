@@ -34,27 +34,6 @@ html {
   background: var(--text);
   color: var(--bg); }
 
-.hero-1 {
-  transition: background 500ms ease;
-  background-image: url("../images/desktop-image-hero-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
-
-.hero-2 {
-  transition: background 500ms ease;
-  background-image: url("../images/desktop-image-hero-2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
-
-.hero-3 {
-  transition: background 500ms ease;
-  background-image: url("../images/desktop-image-hero-3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
-
 body {
   font-family: 'Spartan', sans-serif;
   font-size: 1.2rem;
@@ -66,7 +45,17 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   transition: background 500ms ease;
-  backdrop-filter: blur(50px) brightness(95%); }
+  backdrop-filter: blur(50px) brightness(95%);
+  transition: background 500ms ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  body.hero-1 {
+    background-image: url("../images/desktop-image-hero-1.jpg"); }
+  body.hero-2 {
+    background-image: url("../images/desktop-image-hero-2.jpg"); }
+  body.hero-3 {
+    background-image: url("../images/desktop-image-hero-3.jpg"); }
   body.dark {
     backdrop-filter: blur(50px) brightness(50%); }
     body.dark img {
@@ -75,9 +64,6 @@ body {
       font-weight: 400; }
     body.dark .title {
       font-weight: 400; }
-  @media only screen and (max-width: 1400px) {
-    body {
-      justify-content: flex-start; } }
 
 .app {
   display: flex;
@@ -85,24 +71,28 @@ body {
   overflow: hidden;
   max-height: 800px;
   max-width: 1440px;
-  width: 100%;
-  height: 100%;
   background: var(--bg);
   position: relative; }
   @media only screen and (max-width: 1440px) {
     .app {
-      max-height: none;
-      height: max-content; } }
+      max-height: none; } }
 
 img {
   user-select: none;
   display: block;
   max-width: 100%;
-  transition: all 550ms ease;
-  transform: scale(1.02); }
+  transition: all 500ms ease; }
   img:hover {
-    transform: scale(1.1);
-    filter: saturate(175%); }
+    filter: saturate(200%); }
+
+:focus {
+  outline: none; }
+
+.icon {
+  display: block; }
+
+.hide {
+  display: none; }
 
 .title {
   font-weight: 600;
@@ -150,14 +140,14 @@ button {
   font-weight: 600; }
   .btn > svg {
     margin-left: 2.6rem;
-    transition: all 250ms ease;
+    transition: all 300ms ease;
     transform: translateX(-1rem); }
   .btn .arrow {
-    transition: all 250ms ease;
+    transition: all 300ms ease;
     fill: var(--text); }
   .btn:hover {
     color: var(--text-2); }
-    .btn:hover svg {
+    .btn:hover > svg {
       transform: translateX(0); }
     .btn:hover .arrow {
       fill: var(--text-2); }
@@ -173,8 +163,7 @@ button {
   z-index: 100; }
   @media only screen and (max-width: 1200px) {
     .nav {
-      padding: 4rem;
-      padding-top: 3.5rem; } }
+      padding: 4rem; } }
   @media only screen and (max-width: 1000px) {
     .nav {
       padding: 3rem; } }
@@ -185,9 +174,7 @@ button {
       gap: 1.6rem; } }
   @media only screen and (max-width: 450px) {
     .nav {
-      padding: 3rem 1.6rem;
-      justify-content: space-between;
-      gap: 1.6rem; } }
+      padding: 3rem 1.6rem; } }
   .nav__open-menu {
     display: none;
     cursor: pointer;
@@ -237,20 +224,23 @@ button {
       transform-origin: right;
       height: 2px;
       background: var(--white);
-      transition: transform 250ms; }
+      transition: transform 300ms; }
     .nav__link:hover::after {
       transform: translateX(-50%) scaleX(1);
       transform-origin: left; }
 
 .mobile-nav {
   background: var(--bg);
-  transform: translateX(-100%);
-  transition: all 450ms ease;
+  transform: translateX(-110%);
+  transition: all 500ms ease;
   opacity: 0.4; }
   .mobile-nav .nav__list {
-    display: flex; }
+    display: flex;
+    font-weight: 600; }
   .mobile-nav .nav__link {
     color: var(--text); }
+    .mobile-nav .nav__link::after {
+      background: var(--text); }
   .mobile-nav .nav__close-menu {
     cursor: pointer;
     padding: 0.4em;
@@ -259,7 +249,7 @@ button {
     .mobile-nav .nav__close-menu .icon {
       fill: var(--text); }
 
-.mobile-nav.show {
+.show-mobile .mobile-nav {
   transform: translateX(0);
   opacity: 1; }
 
@@ -293,13 +283,13 @@ button {
     #theme-toggle .icon.hide {
       display: none; }
   #theme-toggle #sun {
-    transition: all 250ms ease; }
+    transition: all 300ms ease; }
     #theme-toggle #sun:hover {
       fill: #f7e543; }
   #theme-toggle #moon {
-    transition: all 250ms ease; }
+    transition: all 300ms ease; }
     #theme-toggle #moon:hover {
-      fill: #f39006; }
+      fill: #f1a234; }
 
 .controls {
   display: flex;
@@ -331,7 +321,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 250ms ease; }
+  transition: all 500ms ease; }
   @media only screen and (max-width: 650px) {
     .control {
       width: 6rem;
@@ -401,7 +391,7 @@ button {
         .hero__content .btn {
           margin-top: 1rem; } }
   .hero__panel {
-    transition: all 250ms;
+    transition: all 300ms;
     opacity: 0;
     display: none; }
     .hero__panel.show {
@@ -488,7 +478,7 @@ button {
     text-decoration: none;
     color: inherit;
     color: white;
-    transition: all 250ms;
+    transition: all 300ms ease;
     font-weight: 600; }
     .footer a#mentor {
       background: linear-gradient(90deg, #f7e543, #f39006);
@@ -510,12 +500,3 @@ button {
   @media only screen and (max-width: 1200px) {
     .footer {
       flex: 1; } }
-
-:focus {
-  outline: none; }
-
-.icon {
-  display: block; }
-
-.hide {
-  display: none; }
