@@ -262,15 +262,6 @@ button {
 		}
 	}
 
-	&__close-menu {
-		display: none;
-		cursor: pointer;
-		padding: 0.4em;
-
-		position: relative;
-		top: 1px;
-	}
-
 	&__logo {
 		margin-right: 4.8rem;
 
@@ -332,38 +323,32 @@ button {
 	}
 }
 
-.mobile {
-	&.nav {
-		background: white;
-		margin: 0;
-		justify-content: space-between;
-		vertical-align: middle;
-	}
+.mobile-nav {
+	background: var(--bg);
+	transform: translateX(-100%);
+	transition: all 450ms ease;
+	opacity: .4;
+
 	.nav__list {
 		display: flex;
-		z-index: 99;
 	}
 
 	.nav__link {
-		font-size: 1.1em;
 		color: var(--text);
-		padding: 0.4em 0.6em;
 	}
 
-	.nav__logo {
-		display: none;
-	}
-
-	.nav__open-menu {
-		display: none;
-	}
 	.nav__close-menu {
-		display: block;
-	}
+		cursor: pointer;
+		padding: 0.4em;
 
-	#theme-toggle {
-		display: none;
+		position: relative;
+		top: 1px;
 	}
+}
+
+.mobile-nav.show {
+	transform: translateX(0);
+	opacity: 1;
 }
 
 #theme-toggle {

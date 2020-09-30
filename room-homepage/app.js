@@ -3,6 +3,7 @@ const heroImg = document.querySelector('.hero__photo img');
 const heroPanels = document.querySelectorAll('.hero__panel');
 const toggle = document.querySelector('#theme-toggle');
 const nav = document.querySelector('.nav');
+const mobileNav = document.querySelector('.mobile-nav');
 const openMenu = document.querySelector('.nav__open-menu');
 const closeMenu = document.querySelector('.nav__close-menu');
 
@@ -24,8 +25,7 @@ openMenu.addEventListener('click', toggleMenu)
 closeMenu.addEventListener('click', toggleMenu)
 
 function toggleMenu() {
-    nav.classList.toggle('mobile');
-    console.log('clicked');
+    mobileNav.classList.toggle('show');
 }
 
 function changePanel(e) {
@@ -64,6 +64,6 @@ function changeTheme() {
 
 window.addEventListener('resize', () => {
     if (window.innerWidth > 650) {
-        nav.classList.remove('mobile');
+        mobileNav.classList.remove('show');
     }
 })
