@@ -9,6 +9,8 @@ _Flexbox, Sass, BEM_
 
 <img src='screenshots/ffc.png'>
 
+---
+
 ### 2. Base Apparel coming soon page 🦞
 
 _Kinda unfinished 🤷‍♂️_
@@ -17,6 +19,8 @@ _Kinda unfinished 🤷‍♂️_
 > -   [Live Demo](https://base-apparel-liart.now.sh/)
 
 <img src='screenshots/ba.png'>
+
+---
 
 ### 3. Single price grid component 🐳
 
@@ -27,6 +31,8 @@ _Flexbox, Sass, BEM_
 
 <img src='screenshots/spg.png'>
 
+---
+
 ### 4. Ping single column coming soon page 🦅
 
 _Mobile first, Sass, BEM, hint of JavaScript_
@@ -35,6 +41,8 @@ _Mobile first, Sass, BEM, hint of JavaScript_
 > -   [Live Demo](https://ping-coming-soon-page-iota.now.sh/)
 
 <img src='screenshots/ping.png'>
+
+---
 
 ### 5. Insure Landing Page 🚀
 
@@ -45,6 +53,8 @@ _Sass, BEM, Flexbox & Grid_
 
 <img src='screenshots/insure.png'>
 
+---
+
 ### 6. Fylo Dark Theme Landing Page 👽
 
 _Sass, BEM, Flexbox & Grid_
@@ -53,6 +63,8 @@ _Sass, BEM, Flexbox & Grid_
 > -   [Live Demo](https://fylo-mocha.vercel.app)
 
 <img src='screenshots/fylo.png'>
+
+---
 
 ### 7. IP Address Tracker 🌍
 
@@ -63,6 +75,8 @@ _Javscript, Sass, BEM, axios, Leaflet_
 
 <img src='screenshots/ip.png'>
 
+---
+
 ### 8. Bookmark Landing Page 🔖
 
 _Javscript, Sass, BEM_
@@ -72,7 +86,9 @@ _Javscript, Sass, BEM_
 
 <img src='screenshots/blp.png'>
 
-### 8. Room Homepage 💤
+---
+
+### 9. Room Homepage 💤
 
 _Javscript, Sass, BEM_
 
