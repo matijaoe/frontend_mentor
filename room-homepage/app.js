@@ -2,6 +2,9 @@ const controls = document.querySelectorAll('.control');
 const heroImg = document.querySelector('.hero__photo img');
 const heroPanels = document.querySelectorAll('.hero__panel');
 const toggle = document.querySelector('#theme-toggle');
+const nav = document.querySelector('.nav');
+const openMenu = document.querySelector('.nav__open-menu');
+const closeMenu = document.querySelector('.nav__close-menu');
 
 let photos = [
     'images/desktop-image-hero-1.jpg',
@@ -15,7 +18,15 @@ controls.forEach(control => {
 })
 window.addEventListener('keyup', changePanel);
 
-toggle.addEventListener('click', changeTheme)
+toggle.addEventListener('click', changeTheme);
+
+openMenu.addEventListener('click', toggleMenu)
+closeMenu.addEventListener('click', toggleMenu)
+
+function toggleMenu() {
+    nav.classList.toggle('mobile');
+    console.log('clicked');
+}
 
 function changePanel(e) {
     if (e.target.id === 'back' || e.target.parentNode.id === 'back' || e.keyCode === 37) {
@@ -50,3 +61,9 @@ function changeTheme() {
         toggle.innerHTML = `<box-icon type='solid' name='moon' class="icon" id="moon"></box-icon>`
     }
 }
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 650) {
+        nav.classList.remove('mobile');
+    }
+})

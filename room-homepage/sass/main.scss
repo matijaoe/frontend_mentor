@@ -35,6 +35,7 @@ html {
 	box-sizing: border-box;
 	font-size: 62.5%;
 	-webkit-tap-highlight-color: transparent;
+	scrollbar-width: thin;
 }
 
 ::selection {
@@ -121,9 +122,6 @@ body {
 	@media only screen and(max-width:1440px) {
 		max-height: none;
 		height: max-content;
-	}
-
-	@media only screen and(max-width:1200px) {
 	}
 }
 
@@ -225,42 +223,52 @@ button {
 	top: 0;
 	left: 0;
 	right: 0;
-	margin: 5rem;
+	padding: 5rem;
 	display: flex;
 	align-items: center;
 	z-index: 100;
 
 	@media only screen and(max-width: 1200px) {
-		margin: 4rem;
-		margin-top: 3.5rem;
+		padding: 4rem;
+		padding-top: 3.5rem;
 	}
 
 	@media only screen and(max-width:1000px) {
-		margin: 3rem;
+		padding: 3rem;
 	}
 
 	@media only screen and(max-width:650px) {
-		margin: 3rem 1.6rem;
+		padding: 3rem 2.4rem;
+		justify-content: space-between;
+		gap: 1.6rem;
+	}
+	@media only screen and(max-width:450px) {
+		padding: 3rem 1.6rem;
 		justify-content: space-between;
 		gap: 1.6rem;
 	}
 
-	&__menu-icon {
+	&__open-menu {
 		display: none;
 		cursor: pointer;
 		padding: 0.4em;
 
 		@media only screen and(max-width:650px) {
 			display: block;
-			fill: white;
-			color: white;
 		}
 
 		.icon {
-			display: block;
-			width: 3rem;
-			height: 3rem;
+			fill: var(--white);
 		}
+	}
+
+	&__close-menu {
+		display: none;
+		cursor: pointer;
+		padding: 0.4em;
+
+		position: relative;
+		top: 1px;
 	}
 
 	&__logo {
@@ -286,6 +294,7 @@ button {
 		display: flex;
 		align-items: center;
 		gap: 1.2rem;
+		font-weight: 500;
 
 		@media only screen and(max-width:650px) {
 			display: none;
@@ -301,6 +310,7 @@ button {
 		padding: 0.4em 0.8em;
 
 		position: relative;
+		top: 1px;
 
 		&::after {
 			content: '';
@@ -319,6 +329,40 @@ button {
 			transform: translateX(-50%) scaleX(1);
 			transform-origin: left;
 		}
+	}
+}
+
+.mobile {
+	&.nav {
+		background: white;
+		margin: 0;
+		justify-content: space-between;
+		vertical-align: middle;
+	}
+	.nav__list {
+		display: flex;
+		z-index: 99;
+	}
+
+	.nav__link {
+		font-size: 1.1em;
+		color: var(--text);
+		padding: 0.4em 0.6em;
+	}
+
+	.nav__logo {
+		display: none;
+	}
+
+	.nav__open-menu {
+		display: none;
+	}
+	.nav__close-menu {
+		display: block;
+	}
+
+	#theme-toggle {
+		display: none;
 	}
 }
 
@@ -655,6 +699,9 @@ button {
 
 :focus {
 	outline: none;
+}
+.icon {
+	display: block;
 }
 
 .hide {
