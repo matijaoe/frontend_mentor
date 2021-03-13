@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap');
+
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply cursor-pointer focus:outline-none;
+    }
+
+    .filter-btn {
+        @apply hover:text-my-gray-500 dark:hover:text-dark-grayish-blue-200 focus:outline-none font-bold transition duration-300 ease-in-out;
+    }
+}
+
+* {
+    -webkit-tap-highlight-color: transparent; /* transparent with keyword */
+}
