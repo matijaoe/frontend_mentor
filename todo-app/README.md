@@ -1,6 +1,7 @@
 # Frontend Mentor - Todo app
 
-![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
+Design preview for the Todo app coding challenge
+<img src="https://res.cloudinary.com/dz209s6jk/image/upload/v1606414077/Challenges/llcq9eiv3ney5tkxgdtu.jpg">
 
 ## Welcome! 👋
 
