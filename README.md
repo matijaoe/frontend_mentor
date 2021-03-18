@@ -99,7 +99,7 @@ _Javscript, Sass, BEM_
 
 <img src='screenshots/room.png'>
 
-### 10. Room Homepage 📝
+### 10. Todo App 📝
 
 _Vue & Tailwind_
 
